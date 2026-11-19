@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/auth/LoginPage';
 import RegisterPage from './pages/auth/RegisterPage';
 import StudentProfilePage from './pages/student/StudentProfilePage';
+import PublicStudentProfilePage from './pages/student/PublicStudentProfilePage';
 import StudentDashboardPage from './pages/student/StudentDashboardPage';
 import CoursesMentorsPage from './pages/student/CoursesMentorsPage';
 import FacultyProfilePage from './pages/faculty/FacultyProfilePage';
@@ -72,6 +73,7 @@ function AppRoutes() {
         <Route path="/milestones" element={<ProjectMilestonesPage />} />
         <Route path="/projects/:proposalId/milestones" element={<ProjectMilestonesPage />} />
         <Route path="/peer-mentors" element={<PeerMentorsPage />} />
+        <Route path="/students/:userId" element={<PublicStudentProfilePage />} />
         <Route path="/consultations" element={<ConsultationsPage />} />
         <Route path="/analytics" element={<ExecutiveAnalyticsPage />} />
         <Route path="/reports/milestones" element={<MilestoneReportsPage />} />

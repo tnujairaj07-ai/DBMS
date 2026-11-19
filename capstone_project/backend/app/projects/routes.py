@@ -344,8 +344,55 @@ def get_team_skill_gap(team_id):
     if not team:
         return error_response("Team not found.", 404)
 
+    # Always compute collective OFFERED skills of active team members
+    active_member_ids = [m.student_id for m in team.members if m.status == 'ACTIVE']
+    team_member_skills = []
+    if active_member_ids:
+        roster_skill_rows = db.session.execute(
+            text("""
+                SELECT s.skill_id, s.name AS skill_name, sc.name AS category_name,
+                       sp.full_name, us.proficiency_level
+                FROM user_skills us
+                JOIN skills s ON us.skill_id = s.skill_id
+                JOIN skill_categories sc ON s.category_id = sc.category_id
+                JOIN student_profiles sp ON us.student_id = sp.student_id
+                WHERE us.student_id IN :member_ids
+                  AND us.skill_type = 'OFFERED'
+                ORDER BY s.name ASC, us.proficiency_level DESC
+            """),
+            {'member_ids': tuple(active_member_ids)}
+        ).fetchall()
+
+        skill_map = {}
+        for r in roster_skill_rows:
+            if r.skill_id not in skill_map:
+                skill_map[r.skill_id] = {
+                    'skill_id': r.skill_id,
+                    'skill_name': r.skill_name,
+                    'category_name': r.category_name,
+                    'members': []
+                }
+            skill_map[r.skill_id]['members'].append({
+                'full_name': r.full_name,
+                'proficiency_level': r.proficiency_level
+            })
+        team_member_skills = list(skill_map.values())
+
     if not team.idea_id:
-        return error_response("This team is not yet linked to a project idea. Select a project idea to view skill gaps.", 400)
+        return success_response({
+            'team_id': team.team_id,
+            'team_name': team.team_name,
+            'idea_id': None,
+            'idea_title': None,
+            'has_project_idea': False,
+            'total_required_skills': 0,
+            'covered_skills_count': 0,
+            'missing_required_count': 0,
+            'coverage_percentage': 0.0,
+            'team_member_skills': team_member_skills,
+            'skills_breakdown': [],
+            'recommended_peers': []
+        })
 
     # 1. Query the SQL View `vw_team_skill_gaps`
     view_query = text("""
@@ -444,10 +491,112 @@ def get_team_skill_gap(team_id):
         'team_name': team.team_name,
         'idea_id': team.idea_id,
         'idea_title': team.idea.title if team.idea else None,
+        'has_project_idea': True,
         'total_required_skills': total_skills,
         'covered_skills_count': covered_count,
         'missing_required_count': missing_required_count,
         'coverage_percentage': coverage_percent,
+        'team_member_skills': team_member_skills,
         'skills_breakdown': skills_breakdown,
         'recommended_peers': recommended_peers
     })
+
+
+@projects_bp.route('/teams/<int:team_id>/skills', methods=['POST'])
+@jwt_required()
+@role_required('STUDENT')
+def add_team_required_skill(team_id):
+    """Team leader adds a required skill to their team's project (auto-creates a project idea if unlinked)."""
+    user_id = int(get_jwt_identity())
+    user = db.session.get(User, user_id)
+    if not user or not user.student_profile:
+        return error_response("Student profile not found.", 404)
+
+    team = db.session.get(ProjectTeam, team_id)
+    if not team:
+        return error_response("Team not found.", 404)
+
+    if team.leader_id != user.student_profile.student_id:
+        return error_response("Only the team leader can add required team skills.", 403)
+
+    data = request.get_json() or {}
+    skill_id = data.get('skill_id')
+    importance_level = str(data.get('importance_level', 'REQUIRED')).upper()
+    if importance_level not in ('REQUIRED', 'NICE_TO_HAVE'):
+        return error_response("importance_level must be REQUIRED or NICE_TO_HAVE.", 400)
+
+    if not skill_id:
+        return error_response("skill_id is required.", 400)
+
+    skill = db.session.get(Skill, int(skill_id))
+    if not skill:
+        return error_response("Skill not found.", 404)
+
+    try:
+        # Auto-create and link a ProjectIdea if the team was created custom without one
+        if not team.idea_id:
+            from backend.app.models.allocation import ProjectProposal
+            proposal = ProjectProposal.query.filter_by(team_id=team_id).first()
+            default_domain = ResearchDomain.query.first()
+            idea_title = proposal.title if proposal else f"{team.team_name} Capstone Project"
+            idea_abstract = proposal.problem_statement if proposal else f"Custom capstone project for {team.team_name}."
+            idea_domain_id = proposal.domain_id if proposal else (default_domain.domain_id if default_domain else 1)
+
+            new_idea = ProjectIdea(
+                created_by=user_id,
+                domain_id=idea_domain_id,
+                title=idea_title[:200],
+                abstract=idea_abstract,
+                difficulty_level='INTERMEDIATE',
+                status='TEAM_FORMED'
+            )
+            db.session.add(new_idea)
+            db.session.flush()
+            team.idea_id = new_idea.idea_id
+
+        existing = ProjectSkillRequirement.query.filter_by(
+            idea_id=team.idea_id, skill_id=skill.skill_id
+        ).first()
+        if existing:
+            existing.importance_level = importance_level
+        else:
+            db.session.add(ProjectSkillRequirement(
+                idea_id=team.idea_id,
+                skill_id=skill.skill_id,
+                importance_level=importance_level
+            ))
+
+        db.session.commit()
+        return success_response({'idea_id': team.idea_id, 'skill_id': skill.skill_id}, "Team skill requirement saved.", 201)
+    except Exception as e:
+        db.session.rollback()
+        return error_response(f"Failed to add team skill: {str(e)}", 500)
+
+
+@projects_bp.route('/teams/<int:team_id>/skills/<int:skill_id>', methods=['DELETE'])
+@jwt_required()
+@role_required('STUDENT')
+def remove_team_required_skill(team_id, skill_id):
+    """Team leader removes a required skill from their team's project."""
+    user_id = int(get_jwt_identity())
+    user = db.session.get(User, user_id)
+    if not user or not user.student_profile:
+        return error_response("Student profile not found.", 404)
+
+    team = db.session.get(ProjectTeam, team_id)
+    if not team:
+        return error_response("Team not found.", 404)
+
+    if team.leader_id != user.student_profile.student_id:
+        return error_response("Only the team leader can remove team skills.", 403)
+
+    if not team.idea_id:
+        return error_response("No project idea linked to this team.", 400)
+
+    req = ProjectSkillRequirement.query.filter_by(idea_id=team.idea_id, skill_id=skill_id).first()
+    if not req:
+        return error_response("Skill requirement not found.", 404)
+
+    db.session.delete(req)
+    db.session.commit()
+    return success_response(None, "Team skill requirement removed.")

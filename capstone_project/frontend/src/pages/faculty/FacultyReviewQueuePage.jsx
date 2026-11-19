@@ -89,18 +89,17 @@ const FacultyReviewQueuePage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-emerald-800 via-teal-800 to-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-emerald-200 mb-4 border border-white/10">
-            <Inbox className="w-3.5 h-3.5 text-emerald-300" />
-            Faculty Review Queue • Phase 4
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold mb-2.5 border border-emerald-200/70">
+            <Inbox className="w-3.5 h-3.5 text-emerald-600" />
+            Faculty Review Queue
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Supervisor Evaluation Queue
           </h1>
-          <p className="mt-3 text-base text-emerald-100/90 leading-relaxed">
-            Review student milestone submissions, inspect deliverables and repository links, award rubric
-            grades, and enforce progress decisions using database-enforced milestone triggers.
+          <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
+            Review student milestone submissions, inspect deliverables and repository links, and award rubric grades.
           </p>
         </div>
       </div>

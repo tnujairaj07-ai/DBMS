@@ -2,6 +2,11 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 antialiased font-sans min-h-screen;
+    @apply bg-slate-50/80 text-slate-800 antialiased font-sans min-h-screen;
+  }
+
+  /* Refine Lucide icons globally for a cleaner, calmer aesthetic */
+  svg.lucide {
+    stroke-width: 1.75;
   }
 }

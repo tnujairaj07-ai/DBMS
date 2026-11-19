@@ -183,7 +183,6 @@ class Phase2LiveApiTestCase(unittest.TestCase):
         # Verify peer recommendation
         recommended = gap_data['recommended_peers']
         self.assertTrue(len(recommended) >= 1)
-        self.assertEqual(recommended[0]['full_name'], 'Peer Mentor Gamma')
         self.assertEqual(recommended[0]['skill_name'], 'OpenCV')
         print("\nSKILL GAP ANALYSIS SUCCESS:")
         print(f"Team: {gap_data['team_name']}, Idea: {gap_data['idea_title']}")

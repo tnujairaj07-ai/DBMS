@@ -148,6 +148,7 @@ class TeamMember(db.Model):
             'membership_id': self.membership_id,
             'team_id': self.team_id,
             'student_id': self.student_id,
+            'user_id': self.student.user_id if self.student else None,
             'full_name': self.student.full_name if self.student else None,
             'roll_no': self.student.roll_no if self.student else None,
             'department_code': self.student.department.code if self.student and self.student.department else None,

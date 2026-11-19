@@ -49,11 +49,18 @@ class StudentProfile(db.Model):
     semester = db.Column(db.Integer, nullable=False)
     cgpa = db.Column(db.Numeric(3, 2), nullable=True)
     bio = db.Column(db.Text, nullable=True)
+    headline = db.Column(db.String(150), nullable=True)
+    github_url = db.Column(db.String(255), nullable=True)
+    linkedin_url = db.Column(db.String(255), nullable=True)
+    portfolio_url = db.Column(db.String(255), nullable=True)
+    open_to_mentor = db.Column(db.Boolean, default=True, nullable=False)
+    open_to_collaborate = db.Column(db.Boolean, default=True, nullable=False)
     avg_peer_rating = db.Column(db.Numeric(3, 2), default=0.00)
     created_at = db.Column(db.TIMESTAMP, default=datetime.utcnow)
 
     # Relationships
     user_skills = db.relationship('UserSkill', backref='student', lazy='dynamic', cascade='all, delete-orphan')
+    portfolio_projects = db.relationship('StudentProject', backref='student', lazy='dynamic', cascade='all, delete-orphan')
 
     def to_dict(self):
         return {
@@ -67,7 +74,44 @@ class StudentProfile(db.Model):
             'semester': self.semester,
             'cgpa': float(self.cgpa) if self.cgpa is not None else None,
             'bio': self.bio,
+            'headline': self.headline,
+            'github_url': self.github_url,
+            'linkedin_url': self.linkedin_url,
+            'portfolio_url': self.portfolio_url,
+            'open_to_mentor': bool(self.open_to_mentor) if self.open_to_mentor is not None else True,
+            'open_to_collaborate': bool(self.open_to_collaborate) if self.open_to_collaborate is not None else True,
             'avg_peer_rating': float(self.avg_peer_rating) if self.avg_peer_rating is not None else 0.00
+        }
+
+
+class StudentProject(db.Model):
+    __tablename__ = 'student_projects'
+
+    project_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    student_id = db.Column(db.Integer, db.ForeignKey('student_profiles.student_id', ondelete='CASCADE'), nullable=False, index=True)
+    title = db.Column(db.String(150), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    tech_stack = db.Column(db.String(255), nullable=True)
+    github_url = db.Column(db.String(255), nullable=False)
+    live_demo_url = db.Column(db.String(255), nullable=True)
+    project_type = db.Column(
+        db.Enum('PERSONAL', 'ACADEMIC', 'HACKATHON', 'OPEN_SOURCE', name='student_project_type'),
+        default='PERSONAL',
+        nullable=False
+    )
+    created_at = db.Column(db.TIMESTAMP, default=datetime.utcnow)
+
+    def to_dict(self):
+        return {
+            'project_id': self.project_id,
+            'student_id': self.student_id,
+            'title': self.title,
+            'description': self.description,
+            'tech_stack': self.tech_stack,
+            'github_url': self.github_url,
+            'live_demo_url': self.live_demo_url,
+            'project_type': self.project_type,
+            'created_at': self.created_at.isoformat() if self.created_at else None
         }
 
 

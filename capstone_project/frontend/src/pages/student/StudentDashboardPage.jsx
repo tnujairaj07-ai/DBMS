@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import api from '../../api/client';
+import StudentProfileWorkspace from '../../components/student/StudentProfileWorkspace';
 import {
   BookOpen,
   Calendar as CalendarIcon,
@@ -264,31 +265,31 @@ export default function StudentDashboardPage() {
         {/* --------------------------------------------------------- */}
         {activeTab === 'OVERVIEW' && (
           <div className="space-y-8 animate-fade-in">
-            {/* Hero Welcome Banner (Exact style & layout from Image 1) */}
-            <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-blue-50 via-indigo-50/60 to-purple-50/40 border border-indigo-100 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xs">
+            {/* Hero Welcome Banner */}
+            <div className="relative overflow-hidden rounded-2xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xs">
               <div className="relative z-10 max-w-xl space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100/70 text-indigo-700 text-xs font-bold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200/70 text-xs font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
                   Academic Term 2026-2027
                 </div>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                  Welcome back, {profile?.full_name || user?.email?.split('@')[0]}!
+                <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                  Welcome back, {profile?.full_name || user?.email?.split('@')[0]}
                 </h1>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  You are making strong progress in your academic capstone track. Check your upcoming deliverables, consult with assigned supervisors, or connect with peer mentors.
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  Track your upcoming capstone deliverables, consult with assigned supervisors, or connect with peer mentors.
                 </p>
 
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     onClick={() => switchTab('PROFILE')}
-                    className="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-md shadow-indigo-500/20 hover:bg-indigo-700 transition-all flex items-center gap-1.5"
+                    className="px-4 py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-xs shadow-2xs hover:bg-slate-800 transition-all flex items-center gap-1.5"
                   >
                     <Sparkles className="w-3.5 h-3.5" />
                     Manage My Skills & Profile
                   </button>
                   <Link
                     to="/courses"
-                    className="px-5 py-2.5 rounded-xl bg-white text-indigo-700 font-bold text-xs border border-indigo-200 hover:bg-indigo-50 transition-all flex items-center gap-1.5"
+                    className="px-4 py-2.5 rounded-xl bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-200 hover:bg-slate-100 transition-all flex items-center gap-1.5"
                   >
                     <Compass className="w-3.5 h-3.5" />
                     Browse Courses & Mentors
@@ -356,14 +357,14 @@ export default function StudentDashboardPage() {
                 <span className="text-xs font-semibold text-slate-400">DBMS Capstone Cycle</span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Card 1: Blue-Cyan Gradient */}
-                <div className="rounded-[28px] p-6 text-white bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 shadow-md shadow-blue-500/15 flex flex-col justify-between h-48 hover:-translate-y-1 transition-transform">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {/* Card 1: Capstone Project */}
+                <div className="rounded-2xl p-5 bg-white border border-slate-200/90 shadow-2xs flex flex-col justify-between h-44 hover:border-slate-300 transition-all">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-200">
+                    <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200/70">
                       Capstone Project
                     </span>
-                    <h3 className="text-lg font-extrabold mt-1 line-clamp-1">
+                    <h3 className="text-base font-bold text-slate-900 mt-2.5 line-clamp-1">
                       {allocatedProposal?.title || myTeams[0]?.idea_title || 'Smart Attendance System'}
                     </h3>
                   </div>
@@ -371,32 +372,32 @@ export default function StudentDashboardPage() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <div className="flex -space-x-2">
-                        <div className="w-7 h-7 rounded-full bg-blue-300 border-2 border-blue-700 flex items-center justify-center text-[10px] font-black text-slate-800">
+                        <div className="w-7 h-7 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-[10px] font-bold text-blue-700">
                           {profile?.full_name ? profile.full_name[0] : 'S'}
                         </div>
-                        <div className="w-7 h-7 rounded-full bg-indigo-300 border-2 border-blue-700 flex items-center justify-center text-[10px] font-black text-slate-800">
+                        <div className="w-7 h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-700">
                           T
                         </div>
                       </div>
-                      <span className="text-xs text-blue-100 font-semibold">
+                      <span className="text-xs text-slate-500 font-medium">
                         {myTeams.length > 0 ? `${myTeams[0].member_count || 3} Team Members` : 'Team Alpha'}
                       </span>
                     </div>
 
-                    <div className="flex items-center justify-between text-xs text-blue-100 pt-2 border-t border-white/10">
-                      <span>Status: {allocatedProposal?.status || 'ALLOCATED'}</span>
-                      <span className="font-bold underline cursor-pointer" onClick={() => navigate('/teams')}>View Team</span>
+                    <div className="flex items-center justify-between text-xs text-slate-500 pt-2.5 border-t border-slate-100">
+                      <span>Status: <strong className="text-slate-700">{allocatedProposal?.status || 'ALLOCATED'}</strong></span>
+                      <span className="font-semibold text-indigo-600 hover:underline cursor-pointer" onClick={() => navigate('/teams')}>View Team</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Card 2: Indigo-Purple Gradient */}
-                <div className="rounded-[28px] p-6 text-white bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 shadow-md shadow-indigo-500/15 flex flex-col justify-between h-48 hover:-translate-y-1 transition-transform">
+                {/* Card 2: Peer Learning Track */}
+                <div className="rounded-2xl p-5 bg-white border border-slate-200/90 shadow-2xs flex flex-col justify-between h-44 hover:border-slate-300 transition-all">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-purple-200">
+                    <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200/70">
                       Peer Learning Track
                     </span>
-                    <h3 className="text-lg font-extrabold mt-1 line-clamp-1">
+                    <h3 className="text-base font-bold text-slate-900 mt-2.5 line-clamp-1">
                       {mySkills.wanted[0]?.skill_name || 'Python & Computer Vision'}
                     </h3>
                   </div>
@@ -404,45 +405,45 @@ export default function StudentDashboardPage() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <div className="flex -space-x-2">
-                        <div className="w-7 h-7 rounded-full bg-purple-300 border-2 border-purple-700 flex items-center justify-center text-[10px] font-black text-slate-800">
+                        <div className="w-7 h-7 rounded-full bg-indigo-50 border border-indigo-200 flex items-center justify-center text-[10px] font-bold text-indigo-700">
                           P
                         </div>
-                        <div className="w-7 h-7 rounded-full bg-rose-300 border-2 border-purple-700 flex items-center justify-center text-[10px] font-black text-slate-800">
+                        <div className="w-7 h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-700">
                           M
                         </div>
                       </div>
-                      <span className="text-xs text-purple-100 font-semibold">1-on-1 Guidance</span>
+                      <span className="text-xs text-slate-500 font-medium">1-on-1 Guidance</span>
                     </div>
 
-                    <div className="flex items-center justify-between text-xs text-purple-100 pt-2 border-t border-white/10">
+                    <div className="flex items-center justify-between text-xs text-slate-500 pt-2.5 border-t border-slate-100">
                       <span>{peerSessions.length} Scheduled Sessions</span>
-                      <span className="font-bold underline cursor-pointer" onClick={() => navigate('/peer-mentors')}>Find Mentors</span>
+                      <span className="font-semibold text-indigo-600 hover:underline cursor-pointer" onClick={() => navigate('/peer-mentors')}>Find Mentors</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Card 3: Coral-Rose Gradient */}
-                <div className="rounded-[28px] p-6 text-white bg-gradient-to-br from-rose-500 via-pink-600 to-rose-600 shadow-md shadow-rose-500/15 flex flex-col justify-between h-48 hover:-translate-y-1 transition-transform">
+                {/* Card 3: Research & Supervision */}
+                <div className="rounded-2xl p-5 bg-white border border-slate-200/90 shadow-2xs flex flex-col justify-between h-44 hover:border-slate-300 transition-all">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-rose-200">
+                    <span className="inline-block text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/70">
                       Research & Supervision
                     </span>
-                    <h3 className="text-lg font-extrabold mt-1 line-clamp-1">
+                    <h3 className="text-base font-bold text-slate-900 mt-2.5 line-clamp-1">
                       {allocatedProposal?.allocation?.faculty_name || 'Dr. Supervisor'}
                     </h3>
                   </div>
 
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-[11px] font-bold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200 text-[11px] font-semibold">
                         Semester {profile?.semester || 6}
                       </span>
-                      <span className="text-xs text-rose-100 font-medium">Evaluation Term</span>
+                      <span className="text-xs text-slate-500 font-medium">Evaluation Term</span>
                     </div>
 
-                    <div className="flex items-center justify-between text-xs text-rose-100 pt-2 border-t border-white/10">
+                    <div className="flex items-center justify-between text-xs text-slate-500 pt-2.5 border-t border-slate-100">
                       <span>100% Weightage Rubric</span>
-                      <span className="font-bold underline cursor-pointer" onClick={() => navigate('/consultations')}>Book Slot</span>
+                      <span className="font-semibold text-indigo-600 hover:underline cursor-pointer" onClick={() => navigate('/consultations')}>Book Slot</span>
                     </div>
                   </div>
                 </div>
@@ -604,255 +605,7 @@ export default function StudentDashboardPage() {
         {/* --------------------------------------------------------- */}
         {/* VIEW 2: MY SKILLS & PROFILE (Full Integrated Module)     */}
         {/* --------------------------------------------------------- */}
-        {activeTab === 'PROFILE' && (
-          <div className="space-y-8 animate-fade-in">
-            {/* Profile Overview Card */}
-            <div className="bg-gradient-to-r from-blue-50 via-indigo-50/50 to-white rounded-[32px] p-6 sm:p-8 border border-indigo-100 shadow-xs">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                <div className="flex items-center gap-5">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white text-2xl font-extrabold shadow-lg shadow-blue-500/25 shrink-0">
-                    {profile?.full_name ? profile.full_name[0].toUpperCase() : 'S'}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2.5">
-                      <h1 className="text-2xl font-extrabold text-slate-900">
-                        {profile?.full_name || user?.email}
-                      </h1>
-                      <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">
-                        Semester {profile?.semester || '7'}
-                      </span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                      {profile?.department_name || 'Computer Science & AI'} • Roll No: {profile?.roll_no || profile?.roll_number || '2024-CS-042'}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Academic Quick Stats */}
-                <div className="flex items-center gap-4 bg-white px-5 py-3 rounded-2xl border border-slate-200/80 shadow-2xs">
-                  <div className="text-right">
-                    <div className="text-[10px] uppercase font-bold text-slate-400">CGPA</div>
-                    <div className="text-lg font-black text-slate-900">{profile?.cgpa || '8.85'}</div>
-                  </div>
-                  <div className="h-8 w-px bg-slate-200" />
-                  <div className="text-right">
-                    <div className="text-[10px] uppercase font-bold text-slate-400">Peer Rating</div>
-                    <div className="text-lg font-black text-amber-500 flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      {profile?.avg_peer_rating || '4.9'}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {profile?.bio && (
-                <div className="mt-4 pt-4 border-t border-indigo-100/60 text-xs text-slate-600 leading-relaxed">
-                  <span className="font-bold text-slate-800">Academic Bio: </span>
-                  {profile.bio}
-                </div>
-              )}
-            </div>
-
-            {/* Interactive Add Skill Section */}
-            <div className="bg-white rounded-[28px] border border-slate-200 p-6 sm:p-8 shadow-xs">
-              <h2 className="text-lg font-extrabold text-slate-900 mb-1 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-indigo-600" />
-                Add Skills to Your Academic Profile
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-500 mb-6">
-                Declare competencies you can offer as a ranked peer mentor, or skills you wish to learn for your capstone project.
-              </p>
-
-              {skillMessage.text && (
-                <div
-                  className={`mb-4 p-3.5 rounded-xl text-xs font-semibold flex items-center gap-2 ${
-                    skillMessage.type === 'success'
-                      ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-                      : 'bg-rose-50 text-rose-800 border border-rose-200'
-                  }`}
-                >
-                  {skillMessage.type === 'success' ? <Check className="w-4 h-4" /> : <AlertCircle className="w-4 h-4" />}
-                  {skillMessage.text}
-                </div>
-              )}
-
-              <form onSubmit={handleAddSkill} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 items-end">
-                {/* Intent Switcher */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Intent</label>
-                  <select
-                    value={skillType}
-                    onChange={(e) => setSkillType(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="OFFERED">Can Teach (Offered)</option>
-                    <option value="WANTED">Want to Learn (Wishlist)</option>
-                  </select>
-                </div>
-
-                {/* Category Filter */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Category Filter</label>
-                  <select
-                    value={selectedCategory}
-                    onChange={(e) => {
-                      setSelectedCategory(e.target.value);
-                      const first = catalogSkills.find(
-                        (s) => !e.target.value || s.category_id === parseInt(e.target.value, 10)
-                      );
-                      if (first) setSelectedSkillId(first.skill_id);
-                    }}
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="">All Categories</option>
-                    {categories.map((c) => (
-                      <option key={c.category_id} value={c.category_id}>{c.name}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Skill Dropdown */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Skill</label>
-                  <select
-                    value={selectedSkillId}
-                    onChange={(e) => setSelectedSkillId(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-blue-500"
-                  >
-                    {filteredCatalogSkills.map((s) => (
-                      <option key={s.skill_id} value={s.skill_id}>
-                        {s.name} ({s.category_name})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Proficiency */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Proficiency ({proficiency}/5)
-                  </label>
-                  <select
-                    value={proficiency}
-                    onChange={(e) => setProficiency(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="1">1 - Beginner</option>
-                    <option value="2">2 - Elementary</option>
-                    <option value="3">3 - Intermediate</option>
-                    <option value="4">4 - Advanced</option>
-                    <option value="5">5 - Expert</option>
-                  </select>
-                </div>
-
-                {/* Submit */}
-                <div>
-                  <button
-                    type="submit"
-                    disabled={addingSkill}
-                    className="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 shadow-md shadow-indigo-500/20 disabled:opacity-50"
-                  >
-                    <Plus className="w-4 h-4" />
-                    {addingSkill ? 'Saving...' : 'Add Skill'}
-                  </button>
-                </div>
-              </form>
-            </div>
-
-            {/* Skills Matrices: Offered vs Wanted */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Skills Offered Card */}
-              <div className="bg-white rounded-[28px] border border-slate-200 p-6 shadow-xs">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h3 className="text-sm font-extrabold text-slate-900 flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                      Skills Offered (Peer Mentorship)
-                    </h3>
-                    <p className="text-[11px] text-slate-500 mt-0.5">
-                      Skills you can mentor peers on and contribute to project teams
-                    </p>
-                  </div>
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    {mySkills.offered.length} Skills
-                  </span>
-                </div>
-
-                {mySkills.offered.length === 0 ? (
-                  <div className="text-center py-8 text-slate-400 text-xs border-2 border-dashed border-slate-100 rounded-2xl">
-                    No offered skills added yet. Select a skill above to start teaching peers.
-                  </div>
-                ) : (
-                  <div className="flex flex-wrap gap-2">
-                    {mySkills.offered.map((s) => (
-                      <div
-                        key={s.user_skill_id}
-                        className="group flex items-center gap-2 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 text-xs font-semibold hover:bg-emerald-100 transition-colors"
-                      >
-                        <span>{s.skill_name}</span>
-                        <span className="px-1.5 py-0.2 bg-emerald-200/80 rounded text-[10px] font-bold">
-                          Lvl {s.proficiency_level}
-                        </span>
-                        <button
-                          onClick={() => handleDeleteSkill(s.user_skill_id)}
-                          className="text-emerald-400 hover:text-rose-600 transition-colors"
-                          title="Remove skill"
-                        >
-                          <Trash2 className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Skills Wanted Card */}
-              <div className="bg-white rounded-[28px] border border-slate-200 p-6 shadow-xs">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h3 className="text-sm font-extrabold text-slate-900 flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-                      Skills Wanted (Learning Wishlist)
-                    </h3>
-                    <p className="text-[11px] text-slate-500 mt-0.5">
-                      Technologies you need peer mentorship on to fill capstone skill gaps
-                    </p>
-                  </div>
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-                    {mySkills.wanted.length} Wanted
-                  </span>
-                </div>
-
-                {mySkills.wanted.length === 0 ? (
-                  <div className="text-center py-8 text-slate-400 text-xs border-2 border-dashed border-slate-100 rounded-2xl">
-                    No wishlist skills yet. Add skills you wish to learn for your project.
-                  </div>
-                ) : (
-                  <div className="flex flex-wrap gap-2">
-                    {mySkills.wanted.map((s) => (
-                      <div
-                        key={s.user_skill_id}
-                        className="group flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-xl text-blue-900 text-xs font-semibold hover:bg-blue-100 transition-colors"
-                      >
-                        <span>{s.skill_name}</span>
-                        <span className="px-1.5 py-0.2 bg-blue-200/80 rounded text-[10px] font-bold">
-                          Goal Lvl {s.proficiency_level}
-                        </span>
-                        <button
-                          onClick={() => handleDeleteSkill(s.user_skill_id)}
-                          className="text-blue-400 hover:text-rose-600 transition-colors"
-                          title="Remove skill"
-                        >
-                          <Trash2 className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
+        {activeTab === 'PROFILE' && <StudentProfileWorkspace />}
       </main>
 
       {/* ========================================================= */}

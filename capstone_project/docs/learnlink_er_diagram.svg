@@ -1,0 +1,949 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2360" height="2538" viewBox="0 0 2360 2538" style="background:#f8fafc;font-family:Inter,Segoe UI,Arial,sans-serif;">
+
+    <defs>
+      <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
+      </filter>
+      <marker id="crowMany" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 6 L 0 11 M 10 1 L 10 11" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+      </marker>
+      <marker id="oneEnd" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M 5 1 L 5 9" fill="none" stroke="#64748b" stroke-width="1.8"/>
+      </marker>
+    </defs>
+    
+
+    <rect x="40" y="24" width="2280" height="74" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="68" y="56" font-size="22" font-weight="700" fill="#0f172a">LearnLink — Relational Entity-Relationship (ER) Diagram (3NF)</text>
+    <text x="68" y="80" font-size="13" fill="#475569">Live MySQL 8.0 Schema (32 Base Tables • 50 Foreign Key Relationships • 5 Functional Modules)</text>
+    <g transform="translate(1890, 44)">
+      <rect x="0" y="0" width="28" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b"/>
+      <text x="14" y="13" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+      <text x="36" y="13" font-size="11" fill="#334155">Primary Key</text>
+      <rect x="125" y="0" width="28" height="18" rx="4" fill="#e0e7ff" stroke="#6366f1"/>
+      <text x="139" y="13" font-size="10" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+      <text x="161" y="13" font-size="11" fill="#334155">Foreign Key</text>
+      <line x1="255" y1="9" x2="295" y2="9" stroke="#94a3b8" stroke-width="1.8" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+      <text x="303" y="13" font-size="11" fill="#334155">N : 1 Relationship</text>
+    </g>
+    
+
+        <rect x="60" y="126" width="360" height="32" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2"/>
+        <text x="74" y="147" font-size="13" font-weight="700" fill="#1d4ed8">1. Identity &amp; Academic Core</text>
+        
+
+        <rect x="530" y="126" width="360" height="32" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.2"/>
+        <text x="544" y="147" font-size="13" font-weight="700" fill="#047857">2. Skills &amp; Student Portfolio</text>
+        
+
+        <rect x="1000" y="126" width="360" height="32" rx="8" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.2"/>
+        <text x="1014" y="147" font-size="13" font-weight="700" fill="#6d28d9">3. Ideas, Teams &amp; Proposals</text>
+        
+
+        <rect x="1470" y="126" width="360" height="32" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1.2"/>
+        <text x="1484" y="147" font-size="13" font-weight="700" fill="#b45309">4. Allocation &amp; Milestones</text>
+        
+
+        <rect x="1940" y="126" width="360" height="32" rx="8" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1.2"/>
+        <text x="1954" y="147" font-size="13" font-weight="700" fill="#be185d">5. Peer Learning &amp; Consultations</text>
+        
+<path d="M 1830.0 1490.0 C 1872.0 1490.0, 1872.0 1277.0, 1830.0 1277.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 1490.0 C 1425.0 1490.0, 465.0 425.0, 420.0 425.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1940.0 256.0 C 1895.0 256.0, 465.0 425.0, 420.0 425.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1940.0 1119.0 C 1895.0 1119.0, 1875.0 1277.0, 1830.0 1277.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 491.0 C 1425.0 491.0, 465.0 1218.0, 420.0 1218.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 491.0 C 1425.0 491.0, 465.0 1016.0, 420.0 1016.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 2353.0 C 1425.0 2353.0, 465.0 1016.0, 420.0 1016.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1830.0 2353.0 C 1872.0 2353.0, 1872.0 2129.0, 1830.0 2129.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 420.0 1016.0 C 462.0 1016.0, 462.0 234.0, 420.0 234.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 420.0 1016.0 C 462.0 1016.0, 462.0 425.0, 420.0 425.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 671.0 C 1425.0 671.0, 465.0 1016.0, 420.0 1016.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 671.0 C 1425.0 671.0, 935.0 381.0, 890.0 381.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 1277.0 C 1425.0 1277.0, 465.0 425.0, 420.0 425.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1830.0 1277.0 C 1872.0 1277.0, 1872.0 278.0, 1830.0 278.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 1277.0 C 1425.0 1277.0, 465.0 1016.0, 420.0 1016.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 1277.0 C 1425.0 1277.0, 1405.0 1420.0, 1360.0 1420.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 851.0 C 1425.0 851.0, 465.0 1016.0, 420.0 1016.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 851.0 C 1425.0 851.0, 1405.0 1420.0, 1360.0 1420.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 1053.0 C 1425.0 1053.0, 465.0 1016.0, 420.0 1016.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 1053.0 C 1425.0 1053.0, 1405.0 1420.0, 1360.0 1420.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1830.0 2129.0 C 1872.0 2129.0, 1872.0 1916.0, 1830.0 1916.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 2129.0 C 1425.0 2129.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1940.0 1365.0 C 1895.0 1365.0, 465.0 425.0, 420.0 425.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1940.0 469.0 C 1895.0 469.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1940.0 469.0 C 1895.0 469.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1940.0 469.0 C 1895.0 469.0, 935.0 381.0, 890.0 381.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 2300.0 682.0 C 2342.0 682.0, 2342.0 469.0, 2300.0 469.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1000.0 289.0 C 955.0 289.0, 465.0 425.0, 420.0 425.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1000.0 289.0 C 955.0 289.0, 465.0 1218.0, 420.0 1218.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1470.0 1916.0 C 1425.0 1916.0, 1405.0 1420.0, 1360.0 1420.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1830.0 1916.0 C 1872.0 1916.0, 1872.0 1703.0, 1830.0 1703.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1360.0 1420.0 C 1405.0 1420.0, 1425.0 278.0, 1470.0 278.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1000.0 1420.0 C 955.0 1420.0, 465.0 1218.0, 420.0 1218.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1360.0 1420.0 C 1402.0 1420.0, 1402.0 726.0, 1360.0 726.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1360.0 513.0 C 1402.0 513.0, 1402.0 289.0, 1360.0 289.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1000.0 513.0 C 955.0 513.0, 935.0 381.0, 890.0 381.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1360.0 726.0 C 1402.0 726.0, 1402.0 289.0, 1360.0 289.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1000.0 726.0 C 955.0 726.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1940.0 884.0 C 1895.0 884.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 2300.0 884.0 C 2342.0 884.0, 2342.0 682.0, 2300.0 682.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 890.0 381.0 C 932.0 381.0, 932.0 223.0, 890.0 223.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 420.0 715.0 C 462.0 715.0, 462.0 234.0, 420.0 234.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 420.0 715.0 C 462.0 715.0, 462.0 425.0, 420.0 425.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 530.0 807.0 C 485.0 807.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1000.0 1163.0 C 955.0 1163.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1360.0 1163.0 C 1402.0 1163.0, 1402.0 726.0, 1360.0 726.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1000.0 950.0 C 955.0 950.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 1360.0 950.0 C 1402.0 950.0, 1402.0 726.0, 1360.0 726.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 890.0 572.0 C 932.0 572.0, 932.0 381.0, 890.0 381.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+<path d="M 530.0 572.0 C 485.0 572.0, 465.0 715.0, 420.0 715.0" fill="none" stroke="#cbd5e1" stroke-width="1.35" marker-start="url(#crowMany)" marker-end="url(#oneEnd)"/>
+
+        <g filter="url(#cardShadow)">
+          <rect x="60" y="168" width="360" height="132" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 60 178 Q 60 168 70 168 L 410 168 Q 420 168 420 178 L 420 202 L 60 202 Z" fill="#eff6ff"/>
+          <line x1="60" y1="202" x2="420" y2="202" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="72" y="190" font-size="13" font-weight="700" fill="#1d4ed8">departments</text>
+        
+<rect x="70" y="207" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="81" y="217" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="100" y="218" font-size="11.5" font-weight="600" fill="#0f172a">department_id</text>
+<text x="410" y="218" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="240" font-size="11.5" font-weight="400" fill="#334155">name</text>
+<text x="410" y="240" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<text x="72" y="262" font-size="11.5" font-weight="400" fill="#334155">code</text>
+<text x="410" y="262" font-size="10.5" fill="#64748b" text-anchor="end">varchar(10)</text>
+<text x="72" y="284" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="410" y="284" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="60" y="326" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 60 336 Q 60 326 70 326 L 410 326 Q 420 326 420 336 L 420 360 L 60 360 Z" fill="#eff6ff"/>
+          <line x1="60" y1="360" x2="420" y2="360" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="72" y="348" font-size="13" font-weight="700" fill="#1d4ed8">users</text>
+        
+<rect x="70" y="365" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="81" y="375" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="100" y="376" font-size="11.5" font-weight="600" fill="#0f172a">user_id</text>
+<text x="410" y="376" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="398" font-size="11.5" font-weight="400" fill="#334155">email</text>
+<text x="410" y="398" font-size="10.5" fill="#64748b" text-anchor="end">varchar(120)</text>
+<text x="72" y="420" font-size="11.5" font-weight="400" fill="#334155">password_hash</text>
+<text x="410" y="420" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="72" y="442" font-size="11.5" font-weight="400" fill="#334155">role</text>
+<text x="410" y="442" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="72" y="464" font-size="11.5" font-weight="400" fill="#334155">is_active</text>
+<text x="410" y="464" font-size="10.5" fill="#64748b" text-anchor="end">tinyint(1)</text>
+<text x="72" y="486" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="410" y="486" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<text x="72" y="508" font-size="11.5" font-weight="400" fill="#334155">updated_at</text>
+<text x="410" y="508" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="60" y="550" width="360" height="330" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 60 560 Q 60 550 70 550 L 410 550 Q 420 550 420 560 L 420 584 L 60 584 Z" fill="#eff6ff"/>
+          <line x1="60" y1="584" x2="420" y2="584" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="72" y="572" font-size="13" font-weight="700" fill="#1d4ed8">student_profiles</text>
+        
+<rect x="70" y="589" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="81" y="599" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="100" y="600" font-size="11.5" font-weight="600" fill="#0f172a">student_id</text>
+<text x="410" y="600" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="70" y="611" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="81" y="621" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="100" y="622" font-size="11.5" font-weight="600" fill="#0f172a">user_id</text>
+<text x="410" y="622" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="644" font-size="11.5" font-weight="400" fill="#334155">roll_no</text>
+<text x="410" y="644" font-size="10.5" fill="#64748b" text-anchor="end">varchar(20)</text>
+<rect x="70" y="655" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="81" y="665" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="100" y="666" font-size="11.5" font-weight="600" fill="#0f172a">department_id</text>
+<text x="410" y="666" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="688" font-size="11.5" font-weight="400" fill="#334155">full_name</text>
+<text x="410" y="688" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<text x="72" y="710" font-size="11.5" font-weight="400" fill="#334155">semester</text>
+<text x="410" y="710" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="732" font-size="11.5" font-weight="400" fill="#334155">cgpa</text>
+<text x="410" y="732" font-size="10.5" fill="#64748b" text-anchor="end">decimal(3,2)</text>
+<text x="72" y="754" font-size="11.5" font-weight="400" fill="#334155">bio</text>
+<text x="410" y="754" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="72" y="776" font-size="11.5" font-weight="400" fill="#334155">avg_peer_rating</text>
+<text x="410" y="776" font-size="10.5" fill="#64748b" text-anchor="end">decimal(3,2)</text>
+<text x="72" y="798" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="410" y="798" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<text x="72" y="820" font-size="11.5" font-weight="400" fill="#334155">headline</text>
+<text x="410" y="820" font-size="10.5" fill="#64748b" text-anchor="end">varchar(150)</text>
+<text x="72" y="842" font-size="11.5" font-weight="400" fill="#334155">github_url</text>
+<text x="410" y="842" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="72" y="864" font-size="10.5" font-style="italic" fill="#64748b">+4 more columns...</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="60" y="906" width="360" height="220" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 60 916 Q 60 906 70 906 L 410 906 Q 420 906 420 916 L 420 940 L 60 940 Z" fill="#eff6ff"/>
+          <line x1="60" y1="940" x2="420" y2="940" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="72" y="928" font-size="13" font-weight="700" fill="#1d4ed8">faculty_profiles</text>
+        
+<rect x="70" y="945" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="81" y="955" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="100" y="956" font-size="11.5" font-weight="600" fill="#0f172a">faculty_id</text>
+<text x="410" y="956" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="70" y="967" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="81" y="977" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="100" y="978" font-size="11.5" font-weight="600" fill="#0f172a">user_id</text>
+<text x="410" y="978" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="1000" font-size="11.5" font-weight="400" fill="#334155">employee_code</text>
+<text x="410" y="1000" font-size="10.5" fill="#64748b" text-anchor="end">varchar(20)</text>
+<rect x="70" y="1011" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="81" y="1021" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="100" y="1022" font-size="11.5" font-weight="600" fill="#0f172a">department_id</text>
+<text x="410" y="1022" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="1044" font-size="11.5" font-weight="400" fill="#334155">full_name</text>
+<text x="410" y="1044" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<text x="72" y="1066" font-size="11.5" font-weight="400" fill="#334155">designation</text>
+<text x="410" y="1066" font-size="10.5" fill="#64748b" text-anchor="end">varchar(50)</text>
+<text x="72" y="1088" font-size="11.5" font-weight="400" fill="#334155">max_project_capacity</text>
+<text x="410" y="1088" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="1110" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="410" y="1110" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="60" y="1152" width="360" height="132" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 60 1162 Q 60 1152 70 1152 L 410 1152 Q 420 1152 420 1162 L 420 1186 L 60 1186 Z" fill="#eff6ff"/>
+          <line x1="60" y1="1186" x2="420" y2="1186" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="72" y="1174" font-size="13" font-weight="700" fill="#1d4ed8">research_domains</text>
+        
+<rect x="70" y="1191" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="81" y="1201" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="100" y="1202" font-size="11.5" font-weight="600" fill="#0f172a">domain_id</text>
+<text x="410" y="1202" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="72" y="1224" font-size="11.5" font-weight="400" fill="#334155">name</text>
+<text x="410" y="1224" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<text x="72" y="1246" font-size="11.5" font-weight="400" fill="#334155">description</text>
+<text x="410" y="1246" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="72" y="1268" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="410" y="1268" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="530" y="168" width="360" height="110" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 530 178 Q 530 168 540 168 L 880 168 Q 890 168 890 178 L 890 202 L 530 202 Z" fill="#ecfdf5"/>
+          <line x1="530" y1="202" x2="890" y2="202" stroke="#a7f3d0" stroke-width="1"/>
+          <text x="542" y="190" font-size="13" font-weight="700" fill="#047857">skill_categories</text>
+        
+<rect x="540" y="207" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="551" y="217" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="570" y="218" font-size="11.5" font-weight="600" fill="#0f172a">category_id</text>
+<text x="880" y="218" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="542" y="240" font-size="11.5" font-weight="400" fill="#334155">name</text>
+<text x="880" y="240" font-size="10.5" fill="#64748b" text-anchor="end">varchar(50)</text>
+<text x="542" y="262" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="880" y="262" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="530" y="304" width="360" height="154" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 530 314 Q 530 304 540 304 L 880 304 Q 890 304 890 314 L 890 338 L 530 338 Z" fill="#ecfdf5"/>
+          <line x1="530" y1="338" x2="890" y2="338" stroke="#a7f3d0" stroke-width="1"/>
+          <text x="542" y="326" font-size="13" font-weight="700" fill="#047857">skills</text>
+        
+<rect x="540" y="343" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="551" y="353" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="570" y="354" font-size="11.5" font-weight="600" fill="#0f172a">skill_id</text>
+<text x="880" y="354" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="540" y="365" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="551" y="375" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="570" y="376" font-size="11.5" font-weight="600" fill="#0f172a">category_id</text>
+<text x="880" y="376" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="542" y="398" font-size="11.5" font-weight="400" fill="#334155">name</text>
+<text x="880" y="398" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<text x="542" y="420" font-size="11.5" font-weight="400" fill="#334155">description</text>
+<text x="880" y="420" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="542" y="442" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="880" y="442" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="530" y="484" width="360" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 530 494 Q 530 484 540 484 L 880 484 Q 890 484 890 494 L 890 518 L 530 518 Z" fill="#ecfdf5"/>
+          <line x1="530" y1="518" x2="890" y2="518" stroke="#a7f3d0" stroke-width="1"/>
+          <text x="542" y="506" font-size="13" font-weight="700" fill="#047857">user_skills</text>
+        
+<rect x="540" y="523" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="551" y="533" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="570" y="534" font-size="11.5" font-weight="600" fill="#0f172a">user_skill_id</text>
+<text x="880" y="534" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="540" y="545" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="551" y="555" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="570" y="556" font-size="11.5" font-weight="600" fill="#0f172a">student_id</text>
+<text x="880" y="556" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="540" y="567" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="551" y="577" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="570" y="578" font-size="11.5" font-weight="600" fill="#0f172a">skill_id</text>
+<text x="880" y="578" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="542" y="600" font-size="11.5" font-weight="400" fill="#334155">skill_type</text>
+<text x="880" y="600" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="542" y="622" font-size="11.5" font-weight="400" fill="#334155">proficiency_level</text>
+<text x="880" y="622" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="542" y="644" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="880" y="644" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="530" y="686" width="360" height="242" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 530 696 Q 530 686 540 686 L 880 686 Q 890 686 890 696 L 890 720 L 530 720 Z" fill="#ecfdf5"/>
+          <line x1="530" y1="720" x2="890" y2="720" stroke="#a7f3d0" stroke-width="1"/>
+          <text x="542" y="708" font-size="13" font-weight="700" fill="#047857">student_projects</text>
+        
+<rect x="540" y="725" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="551" y="735" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="570" y="736" font-size="11.5" font-weight="600" fill="#0f172a">project_id</text>
+<text x="880" y="736" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="540" y="747" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="551" y="757" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="570" y="758" font-size="11.5" font-weight="600" fill="#0f172a">student_id</text>
+<text x="880" y="758" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="542" y="780" font-size="11.5" font-weight="400" fill="#334155">title</text>
+<text x="880" y="780" font-size="10.5" fill="#64748b" text-anchor="end">varchar(150)</text>
+<text x="542" y="802" font-size="11.5" font-weight="400" fill="#334155">description</text>
+<text x="880" y="802" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="542" y="824" font-size="11.5" font-weight="400" fill="#334155">tech_stack</text>
+<text x="880" y="824" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="542" y="846" font-size="11.5" font-weight="400" fill="#334155">github_url</text>
+<text x="880" y="846" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="542" y="868" font-size="11.5" font-weight="400" fill="#334155">live_demo_url</text>
+<text x="880" y="868" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="542" y="890" font-size="11.5" font-weight="400" fill="#334155">project_type</text>
+<text x="880" y="890" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="542" y="912" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="880" y="912" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1000" y="168" width="360" height="242" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1000 178 Q 1000 168 1010 168 L 1350 168 Q 1360 168 1360 178 L 1360 202 L 1000 202 Z" fill="#f5f3ff"/>
+          <line x1="1000" y1="202" x2="1360" y2="202" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="1012" y="190" font-size="13" font-weight="700" fill="#6d28d9">project_ideas</text>
+        
+<rect x="1010" y="207" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1021" y="217" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1040" y="218" font-size="11.5" font-weight="600" fill="#0f172a">idea_id</text>
+<text x="1350" y="218" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="229" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="239" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="240" font-size="11.5" font-weight="600" fill="#0f172a">created_by</text>
+<text x="1350" y="240" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="251" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="261" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="262" font-size="11.5" font-weight="600" fill="#0f172a">domain_id</text>
+<text x="1350" y="262" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="284" font-size="11.5" font-weight="400" fill="#334155">title</text>
+<text x="1350" y="284" font-size="10.5" fill="#64748b" text-anchor="end">varchar(200)</text>
+<text x="1012" y="306" font-size="11.5" font-weight="400" fill="#334155">abstract</text>
+<text x="1350" y="306" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1012" y="328" font-size="11.5" font-weight="400" fill="#334155">difficulty_level</text>
+<text x="1350" y="328" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1012" y="350" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1350" y="350" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1012" y="372" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1350" y="372" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<text x="1012" y="394" font-size="11.5" font-weight="400" fill="#334155">updated_at</text>
+<text x="1350" y="394" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1000" y="436" width="360" height="154" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1000 446 Q 1000 436 1010 436 L 1350 436 Q 1360 436 1360 446 L 1360 470 L 1000 470 Z" fill="#f5f3ff"/>
+          <line x1="1000" y1="470" x2="1360" y2="470" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="1012" y="458" font-size="13" font-weight="700" fill="#6d28d9">project_skill_requirements</text>
+        
+<rect x="1010" y="475" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1021" y="485" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1040" y="486" font-size="11.5" font-weight="600" fill="#0f172a">requirement_id</text>
+<text x="1350" y="486" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="497" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="507" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="508" font-size="11.5" font-weight="600" fill="#0f172a">idea_id</text>
+<text x="1350" y="508" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="519" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="529" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="530" font-size="11.5" font-weight="600" fill="#0f172a">skill_id</text>
+<text x="1350" y="530" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="552" font-size="11.5" font-weight="400" fill="#334155">importance_level</text>
+<text x="1350" y="552" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1012" y="574" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1350" y="574" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1000" y="616" width="360" height="220" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1000 626 Q 1000 616 1010 616 L 1350 616 Q 1360 616 1360 626 L 1360 650 L 1000 650 Z" fill="#f5f3ff"/>
+          <line x1="1000" y1="650" x2="1360" y2="650" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="1012" y="638" font-size="13" font-weight="700" fill="#6d28d9">project_teams</text>
+        
+<rect x="1010" y="655" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1021" y="665" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1040" y="666" font-size="11.5" font-weight="600" fill="#0f172a">team_id</text>
+<text x="1350" y="666" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="677" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="687" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="688" font-size="11.5" font-weight="600" fill="#0f172a">idea_id</text>
+<text x="1350" y="688" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="710" font-size="11.5" font-weight="400" fill="#334155">team_name</text>
+<text x="1350" y="710" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<rect x="1010" y="721" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="731" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="732" font-size="11.5" font-weight="600" fill="#0f172a">leader_id</text>
+<text x="1350" y="732" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="754" font-size="11.5" font-weight="400" fill="#334155">max_members</text>
+<text x="1350" y="754" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="776" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1350" y="776" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1012" y="798" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1350" y="798" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<text x="1012" y="820" font-size="11.5" font-weight="400" fill="#334155">updated_at</text>
+<text x="1350" y="820" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1000" y="862" width="360" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1000 872 Q 1000 862 1010 862 L 1350 862 Q 1360 862 1360 872 L 1360 896 L 1000 896 Z" fill="#f5f3ff"/>
+          <line x1="1000" y1="896" x2="1360" y2="896" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="1012" y="884" font-size="13" font-weight="700" fill="#6d28d9">team_members</text>
+        
+<rect x="1010" y="901" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1021" y="911" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1040" y="912" font-size="11.5" font-weight="600" fill="#0f172a">membership_id</text>
+<text x="1350" y="912" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="923" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="933" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="934" font-size="11.5" font-weight="600" fill="#0f172a">team_id</text>
+<text x="1350" y="934" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="945" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="955" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="956" font-size="11.5" font-weight="600" fill="#0f172a">student_id</text>
+<text x="1350" y="956" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="978" font-size="11.5" font-weight="400" fill="#334155">member_role</text>
+<text x="1350" y="978" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1012" y="1000" font-size="11.5" font-weight="400" fill="#334155">joined_at</text>
+<text x="1350" y="1000" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<text x="1012" y="1022" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1350" y="1022" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1000" y="1064" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1000 1074 Q 1000 1064 1010 1064 L 1350 1064 Q 1360 1064 1360 1074 L 1360 1098 L 1000 1098 Z" fill="#f5f3ff"/>
+          <line x1="1000" y1="1098" x2="1360" y2="1098" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="1012" y="1086" font-size="13" font-weight="700" fill="#6d28d9">team_join_requests</text>
+        
+<rect x="1010" y="1103" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1021" y="1113" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1040" y="1114" font-size="11.5" font-weight="600" fill="#0f172a">join_request_id</text>
+<text x="1350" y="1114" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="1125" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="1135" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="1136" font-size="11.5" font-weight="600" fill="#0f172a">team_id</text>
+<text x="1350" y="1136" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="1147" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="1157" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="1158" font-size="11.5" font-weight="600" fill="#0f172a">student_id</text>
+<text x="1350" y="1158" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="1180" font-size="11.5" font-weight="400" fill="#334155">message</text>
+<text x="1350" y="1180" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1012" y="1202" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1350" y="1202" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1012" y="1224" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1350" y="1224" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<text x="1012" y="1246" font-size="11.5" font-weight="400" fill="#334155">updated_at</text>
+<text x="1350" y="1246" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1000" y="1288" width="360" height="264" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1000 1298 Q 1000 1288 1010 1288 L 1350 1288 Q 1360 1288 1360 1298 L 1360 1322 L 1000 1322 Z" fill="#f5f3ff"/>
+          <line x1="1000" y1="1322" x2="1360" y2="1322" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="1012" y="1310" font-size="13" font-weight="700" fill="#6d28d9">project_proposals</text>
+        
+<rect x="1010" y="1327" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1021" y="1337" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1040" y="1338" font-size="11.5" font-weight="600" fill="#0f172a">proposal_id</text>
+<text x="1350" y="1338" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="1349" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="1359" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="1360" font-size="11.5" font-weight="600" fill="#0f172a">team_id</text>
+<text x="1350" y="1360" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="1371" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="1381" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="1382" font-size="11.5" font-weight="600" fill="#0f172a">cycle_id</text>
+<text x="1350" y="1382" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1010" y="1393" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1021" y="1403" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1040" y="1404" font-size="11.5" font-weight="600" fill="#0f172a">domain_id</text>
+<text x="1350" y="1404" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1012" y="1426" font-size="11.5" font-weight="400" fill="#334155">title</text>
+<text x="1350" y="1426" font-size="10.5" fill="#64748b" text-anchor="end">varchar(200)</text>
+<text x="1012" y="1448" font-size="11.5" font-weight="400" fill="#334155">problem_statement</text>
+<text x="1350" y="1448" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1012" y="1470" font-size="11.5" font-weight="400" fill="#334155">objectives</text>
+<text x="1350" y="1470" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1012" y="1492" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1350" y="1492" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1012" y="1514" font-size="11.5" font-weight="400" fill="#334155">submitted_at</text>
+<text x="1350" y="1514" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<text x="1012" y="1536" font-size="11.5" font-weight="400" fill="#334155">updated_at</text>
+<text x="1350" y="1536" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="168" width="360" height="220" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 178 Q 1470 168 1480 168 L 1820 168 Q 1830 168 1830 178 L 1830 202 L 1470 202 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="202" x2="1830" y2="202" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="190" font-size="13" font-weight="700" fill="#b45309">allocation_cycles</text>
+        
+<rect x="1480" y="207" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="217" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="218" font-size="11.5" font-weight="600" fill="#0f172a">cycle_id</text>
+<text x="1820" y="218" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="240" font-size="11.5" font-weight="400" fill="#334155">name</text>
+<text x="1820" y="240" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<text x="1482" y="262" font-size="11.5" font-weight="400" fill="#334155">semester</text>
+<text x="1820" y="262" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="284" font-size="11.5" font-weight="400" fill="#334155">academic_year</text>
+<text x="1820" y="284" font-size="10.5" fill="#64748b" text-anchor="end">varchar(20)</text>
+<text x="1482" y="306" font-size="11.5" font-weight="400" fill="#334155">start_date</text>
+<text x="1820" y="306" font-size="10.5" fill="#64748b" text-anchor="end">date</text>
+<text x="1482" y="328" font-size="11.5" font-weight="400" fill="#334155">end_date</text>
+<text x="1820" y="328" font-size="10.5" fill="#64748b" text-anchor="end">date</text>
+<text x="1482" y="350" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1820" y="350" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1482" y="372" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="372" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="414" width="360" height="154" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 424 Q 1470 414 1480 414 L 1820 414 Q 1830 414 1830 424 L 1830 448 L 1470 448 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="448" x2="1830" y2="448" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="436" font-size="13" font-weight="700" fill="#b45309">faculty_expertise</text>
+        
+<rect x="1480" y="453" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="463" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="464" font-size="11.5" font-weight="600" fill="#0f172a">expertise_id</text>
+<text x="1820" y="464" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="475" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="485" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="486" font-size="11.5" font-weight="600" fill="#0f172a">faculty_id</text>
+<text x="1820" y="486" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="497" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="507" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="508" font-size="11.5" font-weight="600" fill="#0f172a">domain_id</text>
+<text x="1820" y="508" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="530" font-size="11.5" font-weight="400" fill="#334155">expertise_level</text>
+<text x="1820" y="530" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="552" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="552" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="594" width="360" height="154" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 604 Q 1470 594 1480 594 L 1820 594 Q 1830 594 1830 604 L 1830 628 L 1470 628 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="628" x2="1830" y2="628" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="616" font-size="13" font-weight="700" fill="#b45309">faculty_skill_expertise</text>
+        
+<rect x="1480" y="633" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="643" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="644" font-size="11.5" font-weight="600" fill="#0f172a">fse_id</text>
+<text x="1820" y="644" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="655" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="665" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="666" font-size="11.5" font-weight="600" fill="#0f172a">faculty_id</text>
+<text x="1820" y="666" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="677" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="687" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="688" font-size="11.5" font-weight="600" fill="#0f172a">skill_id</text>
+<text x="1820" y="688" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="710" font-size="11.5" font-weight="400" fill="#334155">proficiency_level</text>
+<text x="1820" y="710" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="732" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="732" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="774" width="360" height="154" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 784 Q 1470 774 1480 774 L 1820 774 Q 1830 774 1830 784 L 1830 808 L 1470 808 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="808" x2="1830" y2="808" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="796" font-size="13" font-weight="700" fill="#b45309">mentor_preferences</text>
+        
+<rect x="1480" y="813" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="823" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="824" font-size="11.5" font-weight="600" fill="#0f172a">preference_id</text>
+<text x="1820" y="824" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="835" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="845" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="846" font-size="11.5" font-weight="600" fill="#0f172a">proposal_id</text>
+<text x="1820" y="846" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="857" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="867" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="868" font-size="11.5" font-weight="600" fill="#0f172a">faculty_id</text>
+<text x="1820" y="868" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="890" font-size="11.5" font-weight="400" fill="#334155">preference_rank</text>
+<text x="1820" y="890" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="912" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="912" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="954" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 964 Q 1470 954 1480 954 L 1820 954 Q 1830 954 1830 964 L 1830 988 L 1470 988 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="988" x2="1830" y2="988" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="976" font-size="13" font-weight="700" fill="#b45309">mentor_recommendations</text>
+        
+<rect x="1480" y="993" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="1003" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="1004" font-size="11.5" font-weight="600" fill="#0f172a">recommendation_id</text>
+<text x="1820" y="1004" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1015" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1025" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1026" font-size="11.5" font-weight="600" fill="#0f172a">proposal_id</text>
+<text x="1820" y="1026" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1037" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1047" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1048" font-size="11.5" font-weight="600" fill="#0f172a">faculty_id</text>
+<text x="1820" y="1048" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1070" font-size="11.5" font-weight="400" fill="#334155">match_score</text>
+<text x="1820" y="1070" font-size="10.5" fill="#64748b" text-anchor="end">decimal(5,2)</text>
+<text x="1482" y="1092" font-size="11.5" font-weight="400" fill="#334155">rank_order</text>
+<text x="1820" y="1092" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1114" font-size="11.5" font-weight="400" fill="#334155">score_breakdown</text>
+<text x="1820" y="1114" font-size="10.5" fill="#64748b" text-anchor="end">json</text>
+<text x="1482" y="1136" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="1136" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="1178" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 1188 Q 1470 1178 1480 1178 L 1820 1178 Q 1830 1178 1830 1188 L 1830 1212 L 1470 1212 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="1212" x2="1830" y2="1212" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="1200" font-size="13" font-weight="700" fill="#b45309">mentor_allocations</text>
+        
+<rect x="1480" y="1217" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="1227" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="1228" font-size="11.5" font-weight="600" fill="#0f172a">allocation_id</text>
+<text x="1820" y="1228" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1239" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1249" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1250" font-size="11.5" font-weight="600" fill="#0f172a">proposal_id</text>
+<text x="1820" y="1250" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1261" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1271" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1272" font-size="11.5" font-weight="600" fill="#0f172a">faculty_id</text>
+<text x="1820" y="1272" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1283" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1293" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1294" font-size="11.5" font-weight="600" fill="#0f172a">cycle_id</text>
+<text x="1820" y="1294" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1316" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1820" y="1316" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1482" y="1338" font-size="11.5" font-weight="400" fill="#334155">allocated_at</text>
+<text x="1820" y="1338" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+<rect x="1480" y="1349" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1359" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1360" font-size="11.5" font-weight="600" fill="#0f172a">allocated_by</text>
+<text x="1820" y="1360" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="1402" width="360" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 1412 Q 1470 1402 1480 1402 L 1820 1402 Q 1830 1402 1830 1412 L 1830 1436 L 1470 1436 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="1436" x2="1830" y2="1436" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="1424" font-size="13" font-weight="700" fill="#b45309">allocation_audit_logs</text>
+        
+<rect x="1480" y="1441" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="1451" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="1452" font-size="11.5" font-weight="600" fill="#0f172a">log_id</text>
+<text x="1820" y="1452" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1463" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1473" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1474" font-size="11.5" font-weight="600" fill="#0f172a">allocation_id</text>
+<text x="1820" y="1474" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1496" font-size="11.5" font-weight="400" fill="#334155">action</text>
+<text x="1820" y="1496" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<rect x="1480" y="1507" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1517" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1518" font-size="11.5" font-weight="600" fill="#0f172a">performed_by</text>
+<text x="1820" y="1518" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1540" font-size="11.5" font-weight="400" fill="#334155">reason</text>
+<text x="1820" y="1540" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1482" y="1562" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="1562" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="1604" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 1614 Q 1470 1604 1480 1604 L 1820 1604 Q 1830 1604 1830 1614 L 1830 1638 L 1470 1638 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="1638" x2="1830" y2="1638" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="1626" font-size="13" font-weight="700" fill="#b45309">milestone_templates</text>
+        
+<rect x="1480" y="1643" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="1653" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="1654" font-size="11.5" font-weight="600" fill="#0f172a">template_id</text>
+<text x="1820" y="1654" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1676" font-size="11.5" font-weight="400" fill="#334155">name</text>
+<text x="1820" y="1676" font-size="10.5" fill="#64748b" text-anchor="end">varchar(100)</text>
+<text x="1482" y="1698" font-size="11.5" font-weight="400" fill="#334155">sequence_no</text>
+<text x="1820" y="1698" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1720" font-size="11.5" font-weight="400" fill="#334155">weightage_percent</text>
+<text x="1820" y="1720" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1742" font-size="11.5" font-weight="400" fill="#334155">default_days_from_start</text>
+<text x="1820" y="1742" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1764" font-size="11.5" font-weight="400" fill="#334155">description</text>
+<text x="1820" y="1764" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1482" y="1786" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="1786" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="1828" width="360" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 1838 Q 1470 1828 1480 1828 L 1820 1828 Q 1830 1828 1830 1838 L 1830 1862 L 1470 1862 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="1862" x2="1830" y2="1862" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="1850" font-size="13" font-weight="700" fill="#b45309">project_milestones</text>
+        
+<rect x="1480" y="1867" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="1877" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="1878" font-size="11.5" font-weight="600" fill="#0f172a">milestone_id</text>
+<text x="1820" y="1878" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1889" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1899" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1900" font-size="11.5" font-weight="600" fill="#0f172a">proposal_id</text>
+<text x="1820" y="1900" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="1911" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="1921" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="1922" font-size="11.5" font-weight="600" fill="#0f172a">template_id</text>
+<text x="1820" y="1922" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="1944" font-size="11.5" font-weight="400" fill="#334155">due_date</text>
+<text x="1820" y="1944" font-size="10.5" fill="#64748b" text-anchor="end">date</text>
+<text x="1482" y="1966" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="1820" y="1966" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1482" y="1988" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="1820" y="1988" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="2030" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 2040 Q 1470 2030 1480 2030 L 1820 2030 Q 1830 2030 1830 2040 L 1830 2064 L 1470 2064 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="2064" x2="1830" y2="2064" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="2052" font-size="13" font-weight="700" fill="#b45309">milestone_submissions</text>
+        
+<rect x="1480" y="2069" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="2079" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="2080" font-size="11.5" font-weight="600" fill="#0f172a">submission_id</text>
+<text x="1820" y="2080" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="2091" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="2101" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="2102" font-size="11.5" font-weight="600" fill="#0f172a">milestone_id</text>
+<text x="1820" y="2102" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="2124" font-size="11.5" font-weight="400" fill="#334155">version_no</text>
+<text x="1820" y="2124" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="2135" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="2145" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="2146" font-size="11.5" font-weight="600" fill="#0f172a">submitted_by</text>
+<text x="1820" y="2146" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="2168" font-size="11.5" font-weight="400" fill="#334155">file_url</text>
+<text x="1820" y="2168" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="1482" y="2190" font-size="11.5" font-weight="400" fill="#334155">notes</text>
+<text x="1820" y="2190" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1482" y="2212" font-size="11.5" font-weight="400" fill="#334155">submitted_at</text>
+<text x="1820" y="2212" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1470" y="2254" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1470 2264 Q 1470 2254 1480 2254 L 1820 2254 Q 1830 2254 1830 2264 L 1830 2288 L 1470 2288 Z" fill="#fffbeb"/>
+          <line x1="1470" y1="2288" x2="1830" y2="2288" stroke="#fde68a" stroke-width="1"/>
+          <text x="1482" y="2276" font-size="13" font-weight="700" fill="#b45309">faculty_feedback</text>
+        
+<rect x="1480" y="2293" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1491" y="2303" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1510" y="2304" font-size="11.5" font-weight="600" fill="#0f172a">feedback_id</text>
+<text x="1820" y="2304" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="2315" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="2325" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="2326" font-size="11.5" font-weight="600" fill="#0f172a">submission_id</text>
+<text x="1820" y="2326" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1480" y="2337" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1491" y="2347" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1510" y="2348" font-size="11.5" font-weight="600" fill="#0f172a">faculty_id</text>
+<text x="1820" y="2348" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="2370" font-size="11.5" font-weight="400" fill="#334155">score</text>
+<text x="1820" y="2370" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1482" y="2392" font-size="11.5" font-weight="400" fill="#334155">comments</text>
+<text x="1820" y="2392" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1482" y="2414" font-size="11.5" font-weight="400" fill="#334155">decision</text>
+<text x="1820" y="2414" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1482" y="2436" font-size="11.5" font-weight="400" fill="#334155">reviewed_at</text>
+<text x="1820" y="2436" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1940" y="168" width="360" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1940 178 Q 1940 168 1950 168 L 2290 168 Q 2300 168 2300 178 L 2300 202 L 1940 202 Z" fill="#fdf2f8"/>
+          <line x1="1940" y1="202" x2="2300" y2="202" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="1952" y="190" font-size="13" font-weight="700" fill="#be185d">availability_slots</text>
+        
+<rect x="1950" y="207" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1961" y="217" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1980" y="218" font-size="11.5" font-weight="600" fill="#0f172a">slot_id</text>
+<text x="2290" y="218" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="229" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="239" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="240" font-size="11.5" font-weight="600" fill="#0f172a">user_id</text>
+<text x="2290" y="240" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1952" y="262" font-size="11.5" font-weight="400" fill="#334155">day_of_week</text>
+<text x="2290" y="262" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1952" y="284" font-size="11.5" font-weight="400" fill="#334155">start_time</text>
+<text x="2290" y="284" font-size="10.5" fill="#64748b" text-anchor="end">time</text>
+<text x="1952" y="306" font-size="11.5" font-weight="400" fill="#334155">end_time</text>
+<text x="2290" y="306" font-size="10.5" fill="#64748b" text-anchor="end">time</text>
+<text x="1952" y="328" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="2290" y="328" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1940" y="370" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1940 380 Q 1940 370 1950 370 L 2290 370 Q 2300 370 2300 380 L 2300 404 L 1940 404 Z" fill="#fdf2f8"/>
+          <line x1="1940" y1="404" x2="2300" y2="404" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="1952" y="392" font-size="13" font-weight="700" fill="#be185d">peer_requests</text>
+        
+<rect x="1950" y="409" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1961" y="419" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1980" y="420" font-size="11.5" font-weight="600" fill="#0f172a">request_id</text>
+<text x="2290" y="420" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="431" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="441" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="442" font-size="11.5" font-weight="600" fill="#0f172a">requester_id</text>
+<text x="2290" y="442" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="453" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="463" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="464" font-size="11.5" font-weight="600" fill="#0f172a">peer_mentor_id</text>
+<text x="2290" y="464" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="475" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="485" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="486" font-size="11.5" font-weight="600" fill="#0f172a">skill_id</text>
+<text x="2290" y="486" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1952" y="508" font-size="11.5" font-weight="400" fill="#334155">message</text>
+<text x="2290" y="508" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1952" y="530" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="2290" y="530" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1952" y="552" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="2290" y="552" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1940" y="594" width="360" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1940 604 Q 1940 594 1950 594 L 2290 594 Q 2300 594 2300 604 L 2300 628 L 1940 628 Z" fill="#fdf2f8"/>
+          <line x1="1940" y1="628" x2="2300" y2="628" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="1952" y="616" font-size="13" font-weight="700" fill="#be185d">peer_sessions</text>
+        
+<rect x="1950" y="633" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1961" y="643" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1980" y="644" font-size="11.5" font-weight="600" fill="#0f172a">session_id</text>
+<text x="2290" y="644" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="655" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="665" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="666" font-size="11.5" font-weight="600" fill="#0f172a">request_id</text>
+<text x="2290" y="666" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1952" y="688" font-size="11.5" font-weight="400" fill="#334155">scheduled_at</text>
+<text x="2290" y="688" font-size="10.5" fill="#64748b" text-anchor="end">datetime</text>
+<text x="1952" y="710" font-size="11.5" font-weight="400" fill="#334155">meeting_link</text>
+<text x="2290" y="710" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="1952" y="732" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="2290" y="732" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1952" y="754" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="2290" y="754" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1940" y="796" width="360" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1940 806 Q 1940 796 1950 796 L 2290 796 Q 2300 796 2300 806 L 2300 830 L 1940 830 Z" fill="#fdf2f8"/>
+          <line x1="1940" y1="830" x2="2300" y2="830" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="1952" y="818" font-size="13" font-weight="700" fill="#be185d">session_reviews</text>
+        
+<rect x="1950" y="835" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1961" y="845" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1980" y="846" font-size="11.5" font-weight="600" fill="#0f172a">review_id</text>
+<text x="2290" y="846" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="857" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="867" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="868" font-size="11.5" font-weight="600" fill="#0f172a">session_id</text>
+<text x="2290" y="868" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="879" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="889" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="890" font-size="11.5" font-weight="600" fill="#0f172a">reviewer_id</text>
+<text x="2290" y="890" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1952" y="912" font-size="11.5" font-weight="400" fill="#334155">rating</text>
+<text x="2290" y="912" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1952" y="934" font-size="11.5" font-weight="400" fill="#334155">feedback</text>
+<text x="2290" y="934" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1952" y="956" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="2290" y="956" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1940" y="998" width="360" height="242" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1940 1008 Q 1940 998 1950 998 L 2290 998 Q 2300 998 2300 1008 L 2300 1032 L 1940 1032 Z" fill="#fdf2f8"/>
+          <line x1="1940" y1="1032" x2="2300" y2="1032" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="1952" y="1020" font-size="13" font-weight="700" fill="#be185d">consultation_meetings</text>
+        
+<rect x="1950" y="1037" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1961" y="1047" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1980" y="1048" font-size="11.5" font-weight="600" fill="#0f172a">meeting_id</text>
+<text x="2290" y="1048" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="1059" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="1069" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="1070" font-size="11.5" font-weight="600" fill="#0f172a">allocation_id</text>
+<text x="2290" y="1070" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1952" y="1092" font-size="11.5" font-weight="400" fill="#334155">scheduled_at</text>
+<text x="2290" y="1092" font-size="10.5" fill="#64748b" text-anchor="end">datetime</text>
+<text x="1952" y="1114" font-size="11.5" font-weight="400" fill="#334155">mode</text>
+<text x="2290" y="1114" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1952" y="1136" font-size="11.5" font-weight="400" fill="#334155">location_or_link</text>
+<text x="2290" y="1136" font-size="10.5" fill="#64748b" text-anchor="end">varchar(255)</text>
+<text x="1952" y="1158" font-size="11.5" font-weight="400" fill="#334155">status</text>
+<text x="2290" y="1158" font-size="10.5" fill="#64748b" text-anchor="end">enum(...)</text>
+<text x="1952" y="1180" font-size="11.5" font-weight="400" fill="#334155">agenda</text>
+<text x="2290" y="1180" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1952" y="1202" font-size="11.5" font-weight="400" fill="#334155">minutes_of_meeting</text>
+<text x="2290" y="1202" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1952" y="1224" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="2290" y="1224" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+
+        <g filter="url(#cardShadow)">
+          <rect x="1940" y="1266" width="360" height="198" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+          <path d="M 1940 1276 Q 1940 1266 1950 1266 L 2290 1266 Q 2300 1266 2300 1276 L 2300 1300 L 1940 1300 Z" fill="#fdf2f8"/>
+          <line x1="1940" y1="1300" x2="2300" y2="1300" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="1952" y="1288" font-size="13" font-weight="700" fill="#be185d">notifications</text>
+        
+<rect x="1950" y="1305" width="22" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+<text x="1961" y="1315" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="middle">PK</text>
+<text x="1980" y="1316" font-size="11.5" font-weight="600" fill="#0f172a">notification_id</text>
+<text x="2290" y="1316" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<rect x="1950" y="1327" width="22" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1" stroke-width="0.8"/>
+<text x="1961" y="1337" font-size="8.5" font-weight="700" fill="#3730a3" text-anchor="middle">FK</text>
+<text x="1980" y="1338" font-size="11.5" font-weight="600" fill="#0f172a">user_id</text>
+<text x="2290" y="1338" font-size="10.5" fill="#64748b" text-anchor="end">int</text>
+<text x="1952" y="1360" font-size="11.5" font-weight="400" fill="#334155">type</text>
+<text x="2290" y="1360" font-size="10.5" fill="#64748b" text-anchor="end">varchar(50)</text>
+<text x="1952" y="1382" font-size="11.5" font-weight="400" fill="#334155">title</text>
+<text x="2290" y="1382" font-size="10.5" fill="#64748b" text-anchor="end">varchar(150)</text>
+<text x="1952" y="1404" font-size="11.5" font-weight="400" fill="#334155">message</text>
+<text x="2290" y="1404" font-size="10.5" fill="#64748b" text-anchor="end">text</text>
+<text x="1952" y="1426" font-size="11.5" font-weight="400" fill="#334155">is_read</text>
+<text x="2290" y="1426" font-size="10.5" fill="#64748b" text-anchor="end">tinyint(1)</text>
+<text x="1952" y="1448" font-size="11.5" font-weight="400" fill="#334155">created_at</text>
+<text x="2290" y="1448" font-size="10.5" fill="#64748b" text-anchor="end">timestamp</text>
+</g>
+</svg>

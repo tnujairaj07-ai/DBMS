@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import api from '../../api/client';
 import {
@@ -81,6 +82,17 @@ const PeerMentorsPage = () => {
       setLoading(false);
     }
   };
+
+  const normalizedSearch = search.trim().toLowerCase();
+  const filteredMentors = mentors.filter((m) => {
+    if (!normalizedSearch) return true;
+    return (
+      m.full_name?.toLowerCase().includes(normalizedSearch) ||
+      m.roll_no?.toLowerCase().includes(normalizedSearch) ||
+      m.department_name?.toLowerCase().includes(normalizedSearch) ||
+      m.offered_skills?.toLowerCase().includes(normalizedSearch)
+    );
+  });
 
   const handleOpenRequest = (mentor) => {
     setSelectedMentor(mentor);
@@ -200,18 +212,17 @@ const PeerMentorsPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-blue-200 mb-4 border border-white/10">
-            <Sparkles className="w-3.5 h-3.5 text-blue-300" />
-            Phase 5 • Peer Skill Exchange & Star Reviews
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2.5 border border-indigo-200/70">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+            Peer Skill Exchange & Reviews
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Peer Skill Mentors & Learning Sessions
           </h1>
-          <p className="mt-3 text-base text-blue-100/90 leading-relaxed">
-            Connect with skilled classmates offering hands-on technical guidance. Request 1-on-1 learning
-            sessions and leave verified reviews with real-time database rating recalculation triggers.
+          <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
+            Connect with skilled classmates offering hands-on technical guidance, request 1-on-1 sessions, and leave verified peer reviews.
           </p>
         </div>
       </div>
@@ -287,20 +298,29 @@ const PeerMentorsPage = () => {
         <div className="space-y-6">
           {/* Search bar */}
           <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-xs border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="relative w-full sm:w-80">
+            <div className="relative w-full sm:w-96">
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search mentor by name, roll no..."
+                placeholder="Search mentor by name, roll no, dept, or skill..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && loadData()}
-                className="w-full pl-9 pr-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20"
+                className="w-full pl-9 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:bg-white"
               />
+              {search && (
+                <button
+                  type="button"
+                  onClick={() => setSearch('')}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
+                  title="Clear search"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
             </div>
 
             <div className="text-xs font-semibold text-slate-500">
-              Showing <span className="text-slate-900 font-bold">{mentors.length}</span> verified peer mentors
+              Showing <span className="text-slate-900 font-bold">{filteredMentors.length}</span> verified peer mentors
             </div>
           </div>
 
@@ -308,17 +328,25 @@ const PeerMentorsPage = () => {
             <div className="py-20 flex justify-center items-center">
               <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-600"></div>
             </div>
-          ) : mentors.length === 0 ? (
-            <div className="bg-white rounded-3xl p-12 text-center border border-slate-200">
+          ) : filteredMentors.length === 0 ? (
+            <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 space-y-2">
               <Users className="w-12 h-12 text-slate-300 mx-auto mb-3" />
               <h3 className="text-lg font-bold text-slate-800">No Peer Mentors Found</h3>
               <p className="text-sm text-slate-500 mt-1">
-                No students currently offer matching skills in this directory.
+                No students match your current search filter.
               </p>
+              {search && (
+                <button
+                  onClick={() => setSearch('')}
+                  className="text-xs font-semibold text-indigo-600 hover:underline pt-1"
+                >
+                  Clear search
+                </button>
+              )}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mentors.map((m, idx) => {
+              {filteredMentors.map((m, idx) => {
                 const ratingNum = parseFloat(m.avg_peer_rating || 0);
                 const skills = m.offered_skills ? m.offered_skills.split(', ') : [];
 
@@ -381,17 +409,26 @@ const PeerMentorsPage = () => {
                       </div>
                     </div>
 
-                    {role === 'STUDENT' && (
-                      <div className="mt-6 pt-4 border-t border-slate-100">
+                    <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2">
+                      {m.user_id && (
+                        <Link
+                          to={`/students/${m.user_id}`}
+                          className="px-3.5 py-2.5 rounded-xl border border-slate-200 hover:border-indigo-300 text-slate-700 hover:text-indigo-700 font-bold text-xs transition-all inline-flex items-center justify-center gap-1.5"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          Profile
+                        </Link>
+                      )}
+                      {role === 'STUDENT' && (
                         <button
                           onClick={() => handleOpenRequest(m)}
-                          className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
+                          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
                         >
                           <Send className="w-3.5 h-3.5" />
-                          Request Guidance Session
+                          Request Session
                         </button>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 );
               })}

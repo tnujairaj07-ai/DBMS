@@ -154,27 +154,26 @@ const ProjectMilestonesPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Page Header */}
-      <div className="bg-gradient-to-r from-indigo-900 via-blue-900 to-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-blue-200 mb-4 border border-white/10">
-            <Layers className="w-3.5 h-3.5 text-blue-300" />
-            Phase 4 • Milestone Execution & Grading Engine
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2.5 border border-indigo-200/70">
+            <Layers className="w-3.5 h-3.5 text-indigo-600" />
+            Milestone Execution & Grading
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Project Milestone Timeline & Deliverables
           </h1>
-          <p className="mt-3 text-base text-blue-100/90 leading-relaxed">
-            Track student deliverables, document iterations, and faculty evaluation scores. Milestones are
-            automatically generated upon supervisor allocation via MySQL database triggers.
+          <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
+            Track student deliverables, document iterations, and faculty evaluation scores.
           </p>
 
           {/* Project Switcher */}
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <span className="text-xs font-semibold text-blue-200">Select Allocated Project:</span>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <span className="text-xs font-semibold text-slate-600">Select Allocated Project:</span>
             <select
               value={selectedProposalId}
               onChange={(e) => setSelectedProposalId(e.target.value)}
-              className="px-3.5 py-2 bg-white/15 backdrop-blur-md border border-white/20 rounded-xl text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+              className="px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
             >
               {proposalsList.map((p) => (
                 <option key={p.proposal_id} value={p.proposal_id} className="text-slate-900">

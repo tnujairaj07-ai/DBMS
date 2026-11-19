@@ -274,7 +274,7 @@ def submit_proposal():
         return error_response("Only the team leader can submit the formal proposal.", 403)
 
     cycle = db.session.get(AllocationCycle, cycle_id)
-    if not cycle or cycle.status != 'OPEN':
+    if not cycle or cycle.status not in ('OPEN', 'ALLOCATION_IN_PROGRESS'):
         return error_response("Selected allocation cycle is not open for submissions.", 400)
 
     if ProjectProposal.query.filter_by(team_id=team_id).first():

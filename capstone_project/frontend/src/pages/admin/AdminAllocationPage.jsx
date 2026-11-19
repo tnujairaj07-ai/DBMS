@@ -146,20 +146,17 @@ const AdminAllocationPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Admin Header */}
-      <div className="bg-gradient-to-r from-slate-900 via-purple-950 to-indigo-950 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 backdrop-blur-md text-xs font-semibold text-purple-200 mb-4 border border-purple-500/30">
-            <ShieldAlert className="w-3.5 h-3.5 text-purple-300" />
-            Department Admin Command Center • Phase 3
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2.5 border border-indigo-200/70">
+            <ShieldAlert className="w-3.5 h-3.5 text-indigo-600" />
+            Department Admin Command Center
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Mentor Allocation & Workload Governance
           </h1>
-          <p className="mt-3 text-base text-purple-200/90 leading-relaxed">
-            Execute ACID-compliant supervisor allocations using MySQL Stored Procedures (
-            <code className="text-purple-300 font-mono text-xs">sp_allocate_mentor_transaction</code>) with
-            InnoDB row-level locking (<code className="text-purple-300 font-mono text-xs">FOR UPDATE</code>),
-            transparent explainable scoring, and automated capacity triggers.
+          <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
+            Execute ACID-compliant supervisor allocations with InnoDB row-level locking, explainable scoring, and automated capacity triggers.
           </p>
         </div>
       </div>

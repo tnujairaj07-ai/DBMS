@@ -139,7 +139,10 @@ const ProposalsPage = () => {
 
   const handleOpenSubmitModal = () => {
     setMessage({ type: '', text: '' });
-    const activeCycle = cycles.find((c) => c.status === 'ACTIVE') || cycles[0];
+    const activeCycle =
+      cycles.find((c) => c.status === 'OPEN') ||
+      cycles.find((c) => c.status === 'ALLOCATION_IN_PROGRESS') ||
+      cycles[0];
     const leaderTeam = myTeams.find((t) => t.is_leader || t.leader_id === user?.student_profile?.student_id) || myTeams[0];
 
     setProposalForm({
@@ -298,32 +301,31 @@ const ProposalsPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-white/5 transform skew-x-12 pointer-events-none"></div>
-        <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-medium text-blue-100 mb-3 border border-white/10">
-            <FileText className="w-3.5 h-3.5 text-blue-300" />
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2.5 border border-indigo-200/70">
+            <FileText className="w-3.5 h-3.5 text-indigo-600" />
             Project Proposals & Collaboration
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Project Proposals
           </h1>
-          <p className="mt-2 text-sm text-blue-100/90 leading-relaxed">
+          <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
             Review your submitted team proposals and supervisor assignments, or explore ongoing project proposals looking for skilled collaborators.
           </p>
-
-          {role === 'STUDENT' && (
-            <div className="mt-5 flex flex-wrap gap-4">
-              <button
-                onClick={handleOpenSubmitModal}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white text-indigo-700 font-bold text-xs sm:text-sm shadow-md hover:bg-blue-50 transition-all cursor-pointer"
-              >
-                <Plus className="w-4 h-4" />
-                Submit New Project Proposal
-              </button>
-            </div>
-          )}
         </div>
+
+        {role === 'STUDENT' && (
+          <div className="shrink-0">
+            <button
+              onClick={handleOpenSubmitModal}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm shadow-2xs transition-all cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+              Submit New Project Proposal
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Global alert messages */}
@@ -654,6 +656,13 @@ const ProposalsPage = () => {
                 <X className="w-5 h-5" />
               </button>
             </div>
+
+            {message.text && message.type === 'error' && (
+              <div className="p-3 rounded-xl text-xs font-semibold flex items-center gap-2 bg-rose-50 text-rose-800 border border-rose-200">
+                <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+                <span>{message.text}</span>
+              </div>
+            )}
 
             <form onSubmit={handleSubmitProposal} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

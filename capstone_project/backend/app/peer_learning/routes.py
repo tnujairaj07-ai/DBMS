@@ -35,18 +35,23 @@ def get_peer_mentors():
     search = request.args.get('search', '').strip()
 
     try:
-        sql = "SELECT * FROM vw_peer_mentor_rankings WHERE 1=1"
+        sql = """
+            SELECT v.*, sp.user_id
+            FROM vw_peer_mentor_rankings v
+            JOIN student_profiles sp ON v.student_id = sp.student_id
+            WHERE 1=1
+        """
         params = {}
 
         if skill_filter:
-            sql += " AND offered_skills LIKE :skill"
+            sql += " AND v.offered_skills LIKE :skill"
             params['skill'] = f"%{skill_filter}%"
 
         if search:
-            sql += " AND (full_name LIKE :search OR roll_no LIKE :search OR department_name LIKE :search)"
+            sql += " AND (v.full_name LIKE :search OR v.roll_no LIKE :search OR v.department_name LIKE :search OR v.offered_skills LIKE :search)"
             params['search'] = f"%{search}%"
 
-        sql += " ORDER BY avg_peer_rating DESC, total_sessions_completed DESC;"
+        sql += " ORDER BY v.avg_peer_rating DESC, v.total_sessions_completed DESC;"
         result = db.session.execute(text(sql), params).mappings().all()
 
         records = [dict(r) for r in result]

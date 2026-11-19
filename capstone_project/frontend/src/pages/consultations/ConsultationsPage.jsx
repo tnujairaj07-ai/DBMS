@@ -131,29 +131,28 @@ const ConsultationsPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-950 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-blue-200 mb-4 border border-white/10">
-            <Calendar className="w-3.5 h-3.5 text-blue-300" />
-            Phase 5 • Academic Consultations
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2.5 border border-indigo-200/70">
+            <Calendar className="w-3.5 h-3.5 text-indigo-600" />
+            Academic Consultations
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Supervisor Consultation Meetings
           </h1>
-          <p className="mt-3 text-base text-blue-100/90 leading-relaxed">
-            Schedule progress check-ins, record minutes of meetings, and maintain transparent supervisor-student
-            academic dialogue across project milestone iterations.
+          <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
+            Schedule progress check-ins, record minutes of meetings, and maintain transparent supervisor-student dialogue.
           </p>
+        </div>
 
-          <div className="mt-6 flex flex-wrap gap-4">
-            <button
-              onClick={handleOpenBook}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-indigo-900 font-bold text-sm shadow-md hover:bg-blue-50 transition-all cursor-pointer"
-            >
-              <Plus className="w-4 h-4" />
-              Book Consultation Meeting
-            </button>
-          </div>
+        <div className="shrink-0">
+          <button
+            onClick={handleOpenBook}
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm shadow-2xs transition-all cursor-pointer"
+          >
+            <Plus className="w-4 h-4" />
+            Book Consultation Meeting
+          </button>
         </div>
       </div>
 

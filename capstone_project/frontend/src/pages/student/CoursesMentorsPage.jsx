@@ -511,8 +511,34 @@ export default function CoursesMentorsPage() {
   const navigate = useNavigate();
   const profile = user?.student_profile;
 
+  // Live courses & mentors from backend
+  const [courses, setCourses] = useState([]);
+  const [loadingCourses, setLoadingCourses] = useState(true);
+
   // Selected Course state: null (catalog view) or object (drill-down view)
   const [selectedCourse, setSelectedCourse] = useState(null);
+  const [mentorTab, setMentorTab] = useState('FACULTY'); // 'FACULTY' | 'PEER'
+  const [mentorSearchQuery, setMentorSearchQuery] = useState('');
+
+  useEffect(() => {
+    const fetchCoursesMentors = async () => {
+      try {
+        setLoadingCourses(true);
+        const res = await api.get('/academic/courses-mentors');
+        if (res.data?.success && Array.isArray(res.data.data) && res.data.data.length > 0) {
+          setCourses(res.data.data);
+        } else {
+          setCourses(DEFAULT_COURSES);
+        }
+      } catch (err) {
+        console.error('Failed to fetch courses & mentors:', err);
+        setCourses(DEFAULT_COURSES);
+      } finally {
+        setLoadingCourses(false);
+      }
+    };
+    fetchCoursesMentors();
+  }, []);
 
   // Filter & Search states (for main catalog)
   const [selectedDomain, setSelectedDomain] = useState('All');
@@ -550,7 +576,7 @@ export default function CoursesMentorsPage() {
   }).format(new Date());
 
   // Filter courses based on user selections
-  const filteredCourses = DEFAULT_COURSES.filter((course) => {
+  const filteredCourses = courses.filter((course) => {
     const matchesDomain =
       selectedDomain === 'All' ||
       course.domain.toLowerCase().includes(selectedDomain.toLowerCase()) ||
@@ -568,6 +594,31 @@ export default function CoursesMentorsPage() {
 
     return matchesDomain && matchesLevel && matchesSearch;
   });
+
+  const normalizedMentorQuery = mentorSearchQuery.trim().toLowerCase();
+  const filteredFacultySupervisors = selectedCourse
+    ? selectedCourse.facultySupervisors.filter((f) => {
+        if (!normalizedMentorQuery) return true;
+        return (
+          f.name?.toLowerCase().includes(normalizedMentorQuery) ||
+          f.designation?.toLowerCase().includes(normalizedMentorQuery) ||
+          f.dept?.toLowerCase().includes(normalizedMentorQuery) ||
+          f.skills?.some((s) => s.toLowerCase().includes(normalizedMentorQuery))
+        );
+      })
+    : [];
+
+  const filteredPeerMentors = selectedCourse
+    ? selectedCourse.peerMentors.filter((p) => {
+        if (!normalizedMentorQuery) return true;
+        return (
+          p.name?.toLowerCase().includes(normalizedMentorQuery) ||
+          p.dept?.toLowerCase().includes(normalizedMentorQuery) ||
+          p.semester?.toLowerCase().includes(normalizedMentorQuery) ||
+          p.skills?.some((s) => s.toLowerCase().includes(normalizedMentorQuery))
+        );
+      })
+    : [];
 
   const openMentorModal = (mentor, course, roleType) => {
     setSelectedMentor({
@@ -743,11 +794,17 @@ export default function CoursesMentorsPage() {
             <div className="flex flex-wrap items-center gap-2">
               {[
                 { id: 'All', label: 'All Tracks' },
-                { id: 'Artificial Intelligence', label: 'AI & Machine Learning' },
-                { id: 'Cloud Computing', label: 'Cloud & Distributed' },
+                { id: 'Artificial Intelligence', label: 'AI & ML' },
+                { id: 'Generative AI', label: 'Generative AI' },
+                { id: 'Database Systems', label: 'Database Systems' },
+                { id: 'Cloud Computing', label: 'Cloud Systems' },
                 { id: 'Cybersecurity', label: 'Cybersecurity' },
-                { id: 'Web & Mobile', label: 'Web & Mobile Dev' },
-                { id: 'Data Science', label: 'Data Engineering' },
+                { id: 'Blockchain', label: 'Blockchain' },
+                { id: 'Web & Mobile', label: 'Web & Mobile' },
+                { id: 'Data Engineering', label: 'Data Engineering' },
+                { id: 'Computer Vision', label: 'Vision & Robotics' },
+                { id: 'DevOps', label: 'DevOps & SRE' },
+                { id: 'UI/UX', label: 'UI/UX & HCI' },
                 { id: 'Internet of Things', label: 'IoT & Embedded' }
               ].map((cat) => (
                 <button
@@ -788,11 +845,19 @@ export default function CoursesMentorsPage() {
             </div>
 
             {/* Course Cards Grid */}
+            {loadingCourses ? (
+              <div className="flex items-center justify-center py-16">
+                <div className="animate-spin rounded-full h-9 w-9 border-b-2 border-indigo-600" />
+              </div>
+            ) : (
             <div className="space-y-5">
               {filteredCourses.map((course) => (
                 <div
                   key={course.id}
-                  onClick={() => setSelectedCourse(course)}
+                  onClick={() => {
+                    setSelectedCourse(course);
+                    setMentorTab('FACULTY');
+                  }}
                   className={`${course.bgColor} ${course.borderColor} border rounded-[28px] p-5 sm:p-6 transition-all hover:shadow-xl hover:scale-[1.008] duration-300 flex flex-col lg:flex-row items-center justify-between gap-6 relative group cursor-pointer`}
                 >
                   {/* Left: 3D Artwork Illustration */}
@@ -846,6 +911,7 @@ export default function CoursesMentorsPage() {
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedCourse(course);
+                        setMentorTab('FACULTY');
                       }}
                       className="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center shadow-lg hover:bg-blue-600 transition-all hover:scale-110 active:scale-95 group/btn"
                       title="View Faculty Supervisors & Peer Mentors"
@@ -856,6 +922,7 @@ export default function CoursesMentorsPage() {
                 </div>
               ))}
             </div>
+            )}
           </div>
         ) : (
           /* VIEW B: COURSE MENTORS HUB (Drill-down for selectedCourse) */
@@ -863,7 +930,10 @@ export default function CoursesMentorsPage() {
             {/* Header: Back Button & Course Details Banner */}
             <div>
               <button
-                onClick={() => setSelectedCourse(null)}
+                onClick={() => {
+                  setSelectedCourse(null);
+                  setMentorSearchQuery('');
+                }}
                 className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-blue-600 mb-4 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -903,13 +973,86 @@ export default function CoursesMentorsPage() {
               </div>
             </div>
 
+            {/* Two Dedicated Tabs + Inside-Course Search Bar */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-200 pb-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={() => setMentorTab('FACULTY')}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                    mentorTab === 'FACULTY'
+                      ? 'bg-slate-900 text-white shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  <Briefcase className="w-4 h-4" />
+                  Specialized Faculty Supervisors
+                  <span
+                    className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
+                      mentorTab === 'FACULTY'
+                        ? 'bg-white/20 text-white'
+                        : 'bg-slate-200 text-slate-700'
+                    }`}
+                  >
+                    {filteredFacultySupervisors.length}
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => setMentorTab('PEER')}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                    mentorTab === 'PEER'
+                      ? 'bg-slate-900 text-white shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  <Sparkles className="w-4 h-4" />
+                  Qualified Peer Mentors
+                  <span
+                    className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
+                      mentorTab === 'PEER'
+                        ? 'bg-white/20 text-white'
+                        : 'bg-slate-200 text-slate-700'
+                    }`}
+                  >
+                    {filteredPeerMentors.length}
+                  </span>
+                </button>
+              </div>
+
+              {/* Search Bar Inside Course Card */}
+              <div className="relative w-full md:w-80">
+                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={mentorSearchQuery}
+                  onChange={(e) => setMentorSearchQuery(e.target.value)}
+                  placeholder={
+                    mentorTab === 'FACULTY'
+                      ? 'Search faculty by name, dept, or skill...'
+                      : 'Search peer mentors by name, dept, or skill...'
+                  }
+                  className="w-full pl-10 pr-8 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:bg-white transition-all"
+                />
+                {mentorSearchQuery && (
+                  <button
+                    onClick={() => setMentorSearchQuery('')}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
+                    title="Clear search"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+            </div>
+
             {/* ------------------------------------------------------------- */}
             {/* SECTION 1: SPECIALIZED FACULTY SUPERVISORS                     */}
             {/* ------------------------------------------------------------- */}
+            {mentorTab === 'FACULTY' && (
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-xl font-extrabold text-slate-900 flex items-center gap-2.5">
+                  <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2.5">
                     <Briefcase className="w-5 h-5 text-blue-600" />
                     Specialized Faculty Supervisors
                   </h2>
@@ -917,13 +1060,24 @@ export default function CoursesMentorsPage() {
                     Faculty directors and research guides specializing in {selectedCourse.title}.
                   </p>
                 </div>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-                  {selectedCourse.facultySupervisors.length} Professors Available
+                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                  {filteredFacultySupervisors.length} Professors Shown
                 </span>
               </div>
 
+              {filteredFacultySupervisors.length === 0 ? (
+                <div className="bg-white rounded-2xl border border-slate-200 p-10 text-center space-y-2">
+                  <p className="text-sm font-semibold text-slate-700">No faculty supervisors match &ldquo;{mentorSearchQuery}&rdquo;</p>
+                  <button
+                    onClick={() => setMentorSearchQuery('')}
+                    className="text-xs font-semibold text-indigo-600 hover:underline"
+                  >
+                    Clear search filter
+                  </button>
+                </div>
+              ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                {selectedCourse.facultySupervisors.map((faculty) => (
+                {filteredFacultySupervisors.map((faculty) => (
                   <div
                     key={faculty.id}
                     className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between"
@@ -931,8 +1085,8 @@ export default function CoursesMentorsPage() {
                     <div className="space-y-4">
                       {/* Mentor Head */}
                       <div className="flex items-start gap-4">
-                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${faculty.avatarBg} text-white font-extrabold text-lg flex items-center justify-center shrink-0 shadow-md`}>
-                          {faculty.name.split(' ').slice(1).map(n => n[0]).join('') || 'F'}
+                        <div className="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-700 border border-indigo-200/80 font-bold text-lg flex items-center justify-center shrink-0">
+                          {faculty.name.split(' ').slice(1).map(n => n[0]).join('') || faculty.name[0]}
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="text-base font-extrabold text-slate-900 truncate">
@@ -988,15 +1142,18 @@ export default function CoursesMentorsPage() {
                   </div>
                 ))}
               </div>
+              )}
             </div>
+            )}
 
             {/* ------------------------------------------------------------- */}
             {/* SECTION 2: QUALIFIED PEER MENTORS                             */}
             {/* ------------------------------------------------------------- */}
-            <div className="space-y-4 pt-4 border-t border-slate-200">
+            {mentorTab === 'PEER' && (
+            <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-xl font-extrabold text-slate-900 flex items-center gap-2.5">
+                  <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2.5">
                     <Sparkles className="w-5 h-5 text-purple-600" />
                     Qualified Peer Mentors
                   </h2>
@@ -1004,13 +1161,24 @@ export default function CoursesMentorsPage() {
                     Ranked student mentors who have excelled in {selectedCourse.title} and can guide your capstone team.
                   </p>
                 </div>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
-                  {selectedCourse.peerMentors.length} Peer Tutors
+                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+                  {filteredPeerMentors.length} Peer Tutors Shown
                 </span>
               </div>
 
+              {filteredPeerMentors.length === 0 ? (
+                <div className="bg-white rounded-2xl border border-slate-200 p-10 text-center space-y-2">
+                  <p className="text-sm font-semibold text-slate-700">No peer mentors match &ldquo;{mentorSearchQuery}&rdquo;</p>
+                  <button
+                    onClick={() => setMentorSearchQuery('')}
+                    className="text-xs font-semibold text-indigo-600 hover:underline"
+                  >
+                    Clear search filter
+                  </button>
+                </div>
+              ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                {selectedCourse.peerMentors.map((peer) => (
+                {filteredPeerMentors.map((peer) => (
                   <div
                     key={peer.id}
                     className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-purple-400 transition-all flex flex-col justify-between"
@@ -1018,7 +1186,7 @@ export default function CoursesMentorsPage() {
                     <div className="space-y-4">
                       {/* Peer Head */}
                       <div className="flex items-start gap-4">
-                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${peer.avatarBg} text-white font-extrabold text-lg flex items-center justify-center shrink-0 shadow-md`}>
+                        <div className="w-14 h-14 rounded-2xl bg-slate-100 text-slate-700 border border-slate-200 font-bold text-lg flex items-center justify-center shrink-0">
                           {peer.name.split(' ').map(n => n[0]).join('')}
                         </div>
                         <div className="flex-1 min-w-0">
@@ -1065,22 +1233,33 @@ export default function CoursesMentorsPage() {
                       </div>
                     </div>
 
-                    <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-xs text-slate-500">
-                        1-on-1 Guidance & Debugging
-                      </span>
+                    <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+                      {peer.user_id ? (
+                        <Link
+                          to={`/students/${peer.user_id}`}
+                          className="text-xs font-semibold text-indigo-600 hover:underline"
+                        >
+                          View Full Portfolio →
+                        </Link>
+                      ) : (
+                        <span className="text-xs text-slate-500">
+                          1-on-1 Guidance & Debugging
+                        </span>
+                      )}
                       <button
                         onClick={() => openMentorModal(peer, selectedCourse, 'PEER')}
-                        className="py-2 px-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5"
+                        className="py-2 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-2xs transition-colors flex items-center gap-1.5"
                       >
                         <UserCheck className="w-3.5 h-3.5" />
-                        View Profile & Reviews
+                        Profile & Book
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
+              )}
             </div>
+            )}
           </div>
         )}
       </main>

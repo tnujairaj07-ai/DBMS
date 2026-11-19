@@ -44,18 +44,17 @@ const ExecutiveAnalyticsPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-purple-950 to-indigo-950 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold text-purple-200 mb-4 border border-white/10">
-            <PieChart className="w-3.5 h-3.5 text-purple-300" />
-            Executive Intelligence • vw_department_analytics
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2.5 border border-indigo-200/70">
+            <PieChart className="w-3.5 h-3.5 text-indigo-600" />
+            Executive Intelligence
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Institutional Department Analytics
           </h1>
-          <p className="mt-3 text-base text-purple-100/90 leading-relaxed">
-            High-level executive metrics tracking student participation, supervisor allocation ratios, peer mentoring
-            velocity, and milestone progress across academic departments.
+          <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
+            Metrics tracking student participation, supervisor allocation ratios, peer mentoring velocity, and milestone progress.
           </p>
         </div>
       </div>
